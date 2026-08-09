@@ -1,0 +1,9 @@
+# Visual Studio / C# Temporary & Build Folders
+bin/
+obj/
+.vs/
+*.user
+*.suo
+
+# Ignore Utility Library
+utilityLibrary/
