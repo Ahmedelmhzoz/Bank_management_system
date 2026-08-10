@@ -14,5 +14,25 @@ namespace BankSystem {
             InitializeComponent();
         }
 
+
+        private void btnShowClients_Click(object sender, EventArgs e) {
+            ClientsList cf = new ClientsList();
+            cf.ShowDialog();
+        }
+
+        private void AlterClientClick(object sender, EventArgs e) {
+            DealWithClients dealWithClients = new DealWithClients();
+            dealWithClients.ShowDialog();
+        }
+
+        private void findClientToolStripMenuItem_Click(object sender, EventArgs e) {
+            DealWithClients dealWithClients = new DealWithClients();
+            dealWithClients.ShowDialog();
+        }
+
+        private void showClientsToolStripMenuItem_Click(object sender, EventArgs e) {
+            ClientsList cf = new ClientsList();
+            cf.ShowDialog();
+        }
     }
 }
