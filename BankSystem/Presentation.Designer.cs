@@ -95,6 +95,7 @@
             this.FindCToolStripMenuItem.Name = "FindCToolStripMenuItem";
             this.FindCToolStripMenuItem.Size = new System.Drawing.Size(476, 70);
             this.FindCToolStripMenuItem.Text = "Find Client";
+            this.FindCToolStripMenuItem.Click += new System.EventHandler(this.FindCToolStripMenuItem_Click);
             // 
             // transactionsToolStripMenuItem
             // 
