@@ -75,8 +75,9 @@
             this.dgvClientsList.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvClientsList.RowHeadersWidth = 102;
             this.dgvClientsList.RowTemplate.Height = 40;
-            this.dgvClientsList.Size = new System.Drawing.Size(1959, 991);
+            this.dgvClientsList.Size = new System.Drawing.Size(1996, 991);
             this.dgvClientsList.TabIndex = 0;
+            this.dgvClientsList.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvClientsList_CellFormatting);
             // 
             // accountNumber
             // 
@@ -120,7 +121,7 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Controls.Add(this.dgvClientsList);
             this.Name = "dgvClients";
-            this.Size = new System.Drawing.Size(1959, 1027);
+            this.Size = new System.Drawing.Size(1996, 1027);
             this.Load += new System.EventHandler(this.dgvClients_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientsList)).EndInit();
             this.ResumeLayout(false);
