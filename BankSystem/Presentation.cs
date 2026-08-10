@@ -34,5 +34,10 @@ namespace BankSystem {
             ClientsList cf = new ClientsList();
             cf.ShowDialog();
         }
+
+        private void FindCToolStripMenuItem_Click(object sender, EventArgs e) {
+            DealWithClients dealWithClients = new DealWithClients();
+            dealWithClients.ShowDialog();
+        }
     }
 }

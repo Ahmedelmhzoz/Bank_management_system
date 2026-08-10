@@ -26,7 +26,7 @@
             this.btnDeleteClient = new System.Windows.Forms.Button();
             this.btnUpdateClient = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.clientsFilter1 = new BankSystem.ClientsFilter();
+            this.dgvClients = new BankSystem.ClientsFilter();
             this.SuspendLayout();
             // 
             // btnDeleteClient
@@ -39,6 +39,7 @@
             this.btnDeleteClient.Size = new System.Drawing.Size(196, 100);
             this.btnDeleteClient.TabIndex = 2;
             this.btnDeleteClient.UseVisualStyleBackColor = false;
+            this.btnDeleteClient.Click += new System.EventHandler(this.btnDeleteClient_Click);
             // 
             // btnUpdateClient
             // 
@@ -62,13 +63,13 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Find Client:";
             // 
-            // clientsFilter1
+            // dgvClients
             // 
-            this.clientsFilter1.BackColor = System.Drawing.Color.Black;
-            this.clientsFilter1.Location = new System.Drawing.Point(-5, 135);
-            this.clientsFilter1.Name = "clientsFilter1";
-            this.clientsFilter1.Size = new System.Drawing.Size(1959, 1133);
-            this.clientsFilter1.TabIndex = 0;
+            this.dgvClients.BackColor = System.Drawing.Color.Black;
+            this.dgvClients.Location = new System.Drawing.Point(-5, 135);
+            this.dgvClients.Name = "dgvClients";
+            this.dgvClients.Size = new System.Drawing.Size(1959, 1133);
+            this.dgvClients.TabIndex = 0;
             // 
             // DealWithClients
             // 
@@ -79,7 +80,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnDeleteClient);
             this.Controls.Add(this.btnUpdateClient);
-            this.Controls.Add(this.clientsFilter1);
+            this.Controls.Add(this.dgvClients);
             this.Name = "DealWithClients";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DealWithClients";
@@ -90,7 +91,7 @@
 
         #endregion
 
-        private ClientsFilter clientsFilter1;
+        private ClientsFilter dgvClients;
         private System.Windows.Forms.Button btnUpdateClient;
         private System.Windows.Forms.Button btnDeleteClient;
         private System.Windows.Forms.Label label1;
