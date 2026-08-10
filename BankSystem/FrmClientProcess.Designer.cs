@@ -1,5 +1,5 @@
 ﻿namespace BankSystem {
-    partial class FrmAddClient {
+    partial class FrmClientProcess {
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -25,7 +25,7 @@
         private void InitializeComponent() {
             this.components = new System.ComponentModel.Container();
             this.txtPinCode = new System.Windows.Forms.TextBox();
-            this.txtPhone = new System.Windows.Forms.Label();
+            this.lblPhone = new System.Windows.Forms.Label();
             this.txtPhoneNum = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
@@ -49,17 +49,17 @@
             this.txtPinCode.Tag = "PinCode";
             this.txtPinCode.Validating += new System.ComponentModel.CancelEventHandler(this.validatingTextBoxes);
             // 
-            // txtPhone
+            // lblPhone
             // 
-            this.txtPhone.AutoSize = true;
-            this.txtPhone.BackColor = System.Drawing.Color.Teal;
-            this.txtPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.1F);
-            this.txtPhone.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.txtPhone.Location = new System.Drawing.Point(963, 317);
-            this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(161, 47);
-            this.txtPhone.TabIndex = 21;
-            this.txtPhone.Text = "Phone: ";
+            this.lblPhone.AutoSize = true;
+            this.lblPhone.BackColor = System.Drawing.Color.Teal;
+            this.lblPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.1F);
+            this.lblPhone.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblPhone.Location = new System.Drawing.Point(963, 317);
+            this.lblPhone.Name = "lblPhone";
+            this.lblPhone.Size = new System.Drawing.Size(161, 47);
+            this.lblPhone.TabIndex = 21;
+            this.lblPhone.Text = "Phone: ";
             // 
             // txtPhoneNum
             // 
@@ -107,9 +107,10 @@
             // lblProcess
             // 
             this.lblProcess.AutoSize = true;
+            this.lblProcess.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblProcess.Font = new System.Drawing.Font("Microsoft Uighur", 22F, System.Drawing.FontStyle.Bold);
-            this.lblProcess.ForeColor = System.Drawing.Color.MediumSeaGreen;
-            this.lblProcess.Location = new System.Drawing.Point(635, 29);
+            this.lblProcess.ForeColor = System.Drawing.Color.SpringGreen;
+            this.lblProcess.Location = new System.Drawing.Point(642, 25);
             this.lblProcess.Name = "lblProcess";
             this.lblProcess.Size = new System.Drawing.Size(372, 88);
             this.lblProcess.TabIndex = 16;
@@ -170,14 +171,14 @@
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // FrmAddClient
+            // FrmClientProcess
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(1602, 710);
             this.Controls.Add(this.txtPinCode);
-            this.Controls.Add(this.txtPhone);
+            this.Controls.Add(this.lblPhone);
             this.Controls.Add(this.txtPhoneNum);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtName);
@@ -187,7 +188,7 @@
             this.Controls.Add(this.txtAccNumber);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnClose);
-            this.Name = "FrmAddClient";
+            this.Name = "FrmClientProcess";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmAddClient";
             this.Load += new System.EventHandler(this.FrmAddClient_Load);
@@ -201,7 +202,7 @@
         #endregion
 
         private System.Windows.Forms.TextBox txtPinCode;
-        private System.Windows.Forms.Label txtPhone;
+        private System.Windows.Forms.Label lblPhone;
         private System.Windows.Forms.TextBox txtPhoneNum;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtName;

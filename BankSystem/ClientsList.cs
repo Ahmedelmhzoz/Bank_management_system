@@ -13,5 +13,9 @@ namespace BankSystem {
         public ClientsList() {
             InitializeComponent();
         }
+
+        private void ClientsList_Load(object sender, EventArgs e) {
+            lblClientsNum.Text = dgvClients1.clientsNumInString;
+        }
     }
 }

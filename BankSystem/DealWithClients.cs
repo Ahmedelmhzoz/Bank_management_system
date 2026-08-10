@@ -14,7 +14,6 @@ namespace BankSystem {
         public DealWithClients() {
             InitializeComponent();
         }
-
         private void btnDeleteClient_Click(object sender, EventArgs e) {
             string accountNumber = dgvClients.returnCurrentRowAccNumber();
 
@@ -29,6 +28,20 @@ namespace BankSystem {
                             , MessageBoxIcon.Error);
                 }
             }
+        }
+
+        public void setProcess(string ProcessName) {
+            lblProcess.Text = ProcessName;
+        }
+
+        private void btnUpdateClient_Click(object sender, EventArgs e) {
+            string accountNumber = dgvClients.returnCurrentRowAccNumber();
+            FrmClientProcess frm = new FrmClientProcess("Update client");
+            Clients clint = new Clients();
+            clint.fillClientWithDesiredRecord(accountNumber);
+            frm.client = clint;
+            frm.ShowDialog();
+            dgvClients.updateResult();
         }
     }
 }

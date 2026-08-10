@@ -10,11 +10,17 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BankSystem {
-    public partial class FrmAddClient : Form {
-        public FrmAddClient() {
+    public partial class FrmClientProcess : Form {
+        public FrmClientProcess() {
             InitializeComponent();
         }
 
+        public FrmClientProcess(string process) {
+            InitializeComponent();
+            lblProcess.Text = process;
+        }
+
+        public Clients client = new Clients();
         private void validatingTextBoxes(object sender, CancelEventArgs e) {
             TextBox txtBox = (TextBox)sender;
             if (txtBox.Tag.ToString() == "PinCode") 
@@ -30,7 +36,16 @@ namespace BankSystem {
         }
 
         private void FrmAddClient_Load(object sender, EventArgs e) {
-            txtAccNumber.Focus();
+            if (client.currentMode == enMode.updateClient) {
+                txtAccNumber.Text = client.accountNumber;
+                txtAccNumber.Enabled = false;
+                txtName.Text = client.clientName;
+                txtPinCode.Text = client.pinCode;
+                txtPhoneNum.Text = client.phone;
+                txtName.Focus();
+            } else {
+                txtAccNumber.Focus();
+            }
         }
 
         private void btnSave_Click(object sender, EventArgs e) {
@@ -40,18 +55,17 @@ namespace BankSystem {
                 MessageBox.Show("Please fill Account Number, Name and phone text boxes before saving",
                     "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             } else {
-                Clients client = new Clients();
                 client.accountNumber = txtAccNumber.Text;
                 client.clientName = txtName.Text;
                 client.phone = txtPhoneNum.Text;
                 client.pinCode = txtPinCode.Text;
-                if (Clients.isAccountNumberTaken(client.accountNumber)) {
+                if (client.currentMode == enMode.addClient && Clients.isAccountNumberTaken(client.accountNumber)) {
                     MessageBox.Show("Account number is taken, please enter a new account number",
                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
                 if (client.Save()) {
-                    MessageBox.Show("Client Added successfully (-:",
+                    MessageBox.Show("Client Saved successfully (-:",
                    "Successful process", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 } else {
                     MessageBox.Show("Client wasn't saved )-:",

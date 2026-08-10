@@ -21,6 +21,8 @@ namespace BankSystem {
             dgvClientsList.RowTemplate.Height = 70;
         }
 
+        public string clientsNumInString { get { return dgvClientsList.Rows.Count.ToString(); } }
+
         public void refreshData(DataTable newData) {
             dgvClientsList.DataSource = newData;
         }

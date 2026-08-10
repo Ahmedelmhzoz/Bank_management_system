@@ -11,14 +11,14 @@ using static BankData.DataAccess;
 
 namespace BankBusiness
 {
+    public enum enMode { addClient = 0, updateClient = 1 }
     public class Clients {
-        enum enMode { addClient = 0, updateClient = 1 } 
         public string accountNumber {  get; set; }
         public string clientName { get; set; }
         public string pinCode { get; set; }
         public string phone {  get; set; }
 
-        enMode currentMode;
+        public enMode currentMode;
         public Clients() {
             accountNumber = "";
             clientName = "";
@@ -39,6 +39,19 @@ namespace BankBusiness
             }
             return DataAccess.searchResultByCategory(searchMode, currentTxt);
         }
+        public bool fillClientWithDesiredRecord(string accNumber) {
+            string name = "", pc = "", p = "";
+            if (DataAccess.findClient(accNumber, ref pc, ref name, ref p)) {
+                accountNumber = accNumber;
+                pinCode = pc;
+                clientName = name;
+                phone = p;
+                currentMode = enMode.updateClient;
+                return true;
+            }
+            else
+                return false;
+        }
         public static bool deleteAClient(string AccountNumber) {
             return DataAccess.deleteClient(AccountNumber);
         }
@@ -49,8 +62,7 @@ namespace BankBusiness
             return DataAccess.isAccountNumExists(accountNumber);
         }
         bool updateAClient() {
-            return true;
-
+            return DataAccess.updateClient(accountNumber, pinCode, clientName, phone);
         }
         public bool Save() {
             switch (currentMode) { 
@@ -60,7 +72,8 @@ namespace BankBusiness
                             return true;
                       }
                       return false;
-                default: return updateAClient();
+                 case enMode.updateClient: return updateAClient();
+                default: return false;
             }
         }
     }
