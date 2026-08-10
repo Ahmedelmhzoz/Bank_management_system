@@ -25,7 +25,7 @@
         private void InitializeComponent() {
             this.btnDeleteClient = new System.Windows.Forms.Button();
             this.btnUpdateClient = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblProcess = new System.Windows.Forms.Label();
             this.dgvClients = new BankSystem.ClientsFilter();
             this.SuspendLayout();
             // 
@@ -51,17 +51,19 @@
             this.btnUpdateClient.Size = new System.Drawing.Size(196, 100);
             this.btnUpdateClient.TabIndex = 1;
             this.btnUpdateClient.UseVisualStyleBackColor = false;
+            this.btnUpdateClient.Click += new System.EventHandler(this.btnUpdateClient_Click);
             // 
-            // label1
+            // lblProcess
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Teal;
-            this.label1.Location = new System.Drawing.Point(800, 47);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(379, 76);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Find Client:";
+            this.lblProcess.AutoSize = true;
+            this.lblProcess.BackColor = System.Drawing.Color.Cyan;
+            this.lblProcess.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProcess.ForeColor = System.Drawing.Color.Teal;
+            this.lblProcess.Location = new System.Drawing.Point(800, 47);
+            this.lblProcess.Name = "lblProcess";
+            this.lblProcess.Size = new System.Drawing.Size(379, 76);
+            this.lblProcess.TabIndex = 3;
+            this.lblProcess.Text = "Find Client:";
             // 
             // dgvClients
             // 
@@ -77,7 +79,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(1947, 1268);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblProcess);
             this.Controls.Add(this.btnDeleteClient);
             this.Controls.Add(this.btnUpdateClient);
             this.Controls.Add(this.dgvClients);
@@ -94,6 +96,6 @@
         private ClientsFilter dgvClients;
         private System.Windows.Forms.Button btnUpdateClient;
         private System.Windows.Forms.Button btnDeleteClient;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblProcess;
     }
 }

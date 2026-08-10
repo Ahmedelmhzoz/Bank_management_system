@@ -21,7 +21,9 @@ namespace BankSystem {
         }
 
         private void AlterClientClick(object sender, EventArgs e) {
+            Button btn = (Button)sender;
             DealWithClients dealWithClients = new DealWithClients();
+            dealWithClients.setProcess(btn.Text);
             dealWithClients.ShowDialog();
         }
 
@@ -41,15 +43,20 @@ namespace BankSystem {
         }
 
         private void btnAddClient_Click(object sender, EventArgs e) {
-            FrmAddClient frm = new FrmAddClient();
+            FrmClientProcess frm = new FrmClientProcess("Add new client");
 
             frm.ShowDialog();
         }
 
         private void addClientToolStripMenuItem_Click(object sender, EventArgs e) {
-            FrmAddClient frm = new FrmAddClient();
+            FrmClientProcess frm = new FrmClientProcess();
 
             frm.ShowDialog();
+        }
+
+        private void btnClose_Click(object sender, EventArgs e) {
+            this.Close();
+            Application.Exit();
         }
     }
 }

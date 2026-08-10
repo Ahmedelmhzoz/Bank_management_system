@@ -41,6 +41,7 @@
             this.btnTransactions = new System.Windows.Forms.Button();
             this.btnUpdateClient = new System.Windows.Forms.Button();
             this.btnDeleteClient = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,7 +57,7 @@
             this.profileToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(2043, 70);
+            this.menuStrip1.Size = new System.Drawing.Size(2041, 70);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -131,9 +132,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Teal;
             this.label1.Font = new System.Drawing.Font("Microsoft Himalaya", 30.9F, System.Drawing.FontStyle.Bold);
-            this.label1.ForeColor = System.Drawing.Color.Teal;
-            this.label1.Location = new System.Drawing.Point(611, 150);
+            this.label1.ForeColor = System.Drawing.Color.MediumSpringGreen;
+            this.label1.Location = new System.Drawing.Point(636, 159);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(785, 103);
             this.label1.TabIndex = 1;
@@ -144,7 +146,7 @@
             this.btnShowClients.BackColor = System.Drawing.Color.Teal;
             this.btnShowClients.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnShowClients.ForeColor = System.Drawing.Color.Cyan;
-            this.btnShowClients.Location = new System.Drawing.Point(1244, 573);
+            this.btnShowClients.Location = new System.Drawing.Point(1302, 458);
             this.btnShowClients.Name = "btnShowClients";
             this.btnShowClients.Size = new System.Drawing.Size(354, 129);
             this.btnShowClients.TabIndex = 2;
@@ -157,7 +159,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Teal;
-            this.label2.Location = new System.Drawing.Point(758, 369);
+            this.label2.Location = new System.Drawing.Point(782, 329);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(467, 69);
             this.label2.TabIndex = 3;
@@ -168,7 +170,7 @@
             this.btnFindClient.BackColor = System.Drawing.Color.Teal;
             this.btnFindClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFindClient.ForeColor = System.Drawing.Color.Cyan;
-            this.btnFindClient.Location = new System.Drawing.Point(386, 839);
+            this.btnFindClient.Location = new System.Drawing.Point(386, 739);
             this.btnFindClient.Name = "btnFindClient";
             this.btnFindClient.Size = new System.Drawing.Size(354, 129);
             this.btnFindClient.TabIndex = 4;
@@ -181,7 +183,7 @@
             this.btnAddClient.BackColor = System.Drawing.Color.Teal;
             this.btnAddClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddClient.ForeColor = System.Drawing.Color.Cyan;
-            this.btnAddClient.Location = new System.Drawing.Point(386, 573);
+            this.btnAddClient.Location = new System.Drawing.Point(386, 458);
             this.btnAddClient.Name = "btnAddClient";
             this.btnAddClient.Size = new System.Drawing.Size(354, 129);
             this.btnAddClient.TabIndex = 5;
@@ -194,7 +196,7 @@
             this.btnTransactions.BackColor = System.Drawing.Color.Teal;
             this.btnTransactions.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTransactions.ForeColor = System.Drawing.Color.Cyan;
-            this.btnTransactions.Location = new System.Drawing.Point(1244, 839);
+            this.btnTransactions.Location = new System.Drawing.Point(1302, 739);
             this.btnTransactions.Name = "btnTransactions";
             this.btnTransactions.Size = new System.Drawing.Size(354, 129);
             this.btnTransactions.TabIndex = 6;
@@ -206,7 +208,7 @@
             this.btnUpdateClient.BackColor = System.Drawing.Color.Teal;
             this.btnUpdateClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdateClient.ForeColor = System.Drawing.Color.Cyan;
-            this.btnUpdateClient.Location = new System.Drawing.Point(386, 1148);
+            this.btnUpdateClient.Location = new System.Drawing.Point(386, 1025);
             this.btnUpdateClient.Name = "btnUpdateClient";
             this.btnUpdateClient.Size = new System.Drawing.Size(354, 129);
             this.btnUpdateClient.TabIndex = 7;
@@ -219,7 +221,7 @@
             this.btnDeleteClient.BackColor = System.Drawing.Color.Teal;
             this.btnDeleteClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeleteClient.ForeColor = System.Drawing.Color.Cyan;
-            this.btnDeleteClient.Location = new System.Drawing.Point(1244, 1148);
+            this.btnDeleteClient.Location = new System.Drawing.Point(1302, 1034);
             this.btnDeleteClient.Name = "btnDeleteClient";
             this.btnDeleteClient.Size = new System.Drawing.Size(354, 129);
             this.btnDeleteClient.TabIndex = 8;
@@ -227,12 +229,28 @@
             this.btnDeleteClient.UseVisualStyleBackColor = false;
             this.btnDeleteClient.Click += new System.EventHandler(this.AlterClientClick);
             // 
+            // btnClose
+            // 
+            this.btnClose.BackColor = System.Drawing.Color.Teal;
+            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
+            this.btnClose.ForeColor = System.Drawing.Color.Cyan;
+            this.btnClose.Image = global::BankSystem.Properties.Resources.close;
+            this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnClose.Location = new System.Drawing.Point(1753, 1265);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(262, 73);
+            this.btnClose.TabIndex = 9;
+            this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
             // Presentation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(2043, 1388);
+            this.ClientSize = new System.Drawing.Size(2041, 1388);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnDeleteClient);
             this.Controls.Add(this.btnUpdateClient);
             this.Controls.Add(this.btnTransactions);
@@ -272,6 +290,7 @@
         private System.Windows.Forms.ToolStripMenuItem showClientsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addClientToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem FindCToolStripMenuItem;
+        private System.Windows.Forms.Button btnClose;
     }
 }
 
