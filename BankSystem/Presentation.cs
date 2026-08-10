@@ -39,5 +39,17 @@ namespace BankSystem {
             DealWithClients dealWithClients = new DealWithClients();
             dealWithClients.ShowDialog();
         }
+
+        private void btnAddClient_Click(object sender, EventArgs e) {
+            FrmAddClient frm = new FrmAddClient();
+
+            frm.ShowDialog();
+        }
+
+        private void addClientToolStripMenuItem_Click(object sender, EventArgs e) {
+            FrmAddClient frm = new FrmAddClient();
+
+            frm.ShowDialog();
+        }
     }
 }

@@ -88,6 +88,7 @@
             this.addClientToolStripMenuItem.Name = "addClientToolStripMenuItem";
             this.addClientToolStripMenuItem.Size = new System.Drawing.Size(476, 70);
             this.addClientToolStripMenuItem.Text = "Add client";
+            this.addClientToolStripMenuItem.Click += new System.EventHandler(this.addClientToolStripMenuItem_Click);
             // 
             // FindCToolStripMenuItem
             // 
@@ -143,7 +144,7 @@
             this.btnShowClients.BackColor = System.Drawing.Color.Teal;
             this.btnShowClients.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnShowClients.ForeColor = System.Drawing.Color.Cyan;
-            this.btnShowClients.Location = new System.Drawing.Point(386, 573);
+            this.btnShowClients.Location = new System.Drawing.Point(1244, 573);
             this.btnShowClients.Name = "btnShowClients";
             this.btnShowClients.Size = new System.Drawing.Size(354, 129);
             this.btnShowClients.TabIndex = 2;
@@ -167,7 +168,7 @@
             this.btnFindClient.BackColor = System.Drawing.Color.Teal;
             this.btnFindClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFindClient.ForeColor = System.Drawing.Color.Cyan;
-            this.btnFindClient.Location = new System.Drawing.Point(1244, 573);
+            this.btnFindClient.Location = new System.Drawing.Point(386, 839);
             this.btnFindClient.Name = "btnFindClient";
             this.btnFindClient.Size = new System.Drawing.Size(354, 129);
             this.btnFindClient.TabIndex = 4;
@@ -180,12 +181,13 @@
             this.btnAddClient.BackColor = System.Drawing.Color.Teal;
             this.btnAddClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddClient.ForeColor = System.Drawing.Color.Cyan;
-            this.btnAddClient.Location = new System.Drawing.Point(386, 839);
+            this.btnAddClient.Location = new System.Drawing.Point(386, 573);
             this.btnAddClient.Name = "btnAddClient";
             this.btnAddClient.Size = new System.Drawing.Size(354, 129);
             this.btnAddClient.TabIndex = 5;
             this.btnAddClient.Text = "Add client";
             this.btnAddClient.UseVisualStyleBackColor = false;
+            this.btnAddClient.Click += new System.EventHandler(this.btnAddClient_Click);
             // 
             // btnTransactions
             // 

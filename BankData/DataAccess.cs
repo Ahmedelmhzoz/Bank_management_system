@@ -78,5 +78,50 @@ namespace BankData
             }
             return isDeleted;
         }
+        public static bool addClient(string accNum, string name, string phone, string pinCode) {
+            bool isAdded = false;
+            SqlConnection conn = new SqlConnection(connectionSettings);
+            string query = "Insert into Clients Values (@AN, @PC, @N, @P, null)";
+            SqlCommand cmd = new SqlCommand(query, conn);
+            cmd.Parameters.AddWithValue("@AN", accNum);
+            cmd.Parameters.AddWithValue("@PC", (string.IsNullOrEmpty(pinCode) ? DBNull.Value : (object)pinCode));
+            cmd.Parameters.AddWithValue("@N", name);
+            cmd.Parameters.AddWithValue("@P", phone);
+            try {
+                conn.Open();
+                int affectedRows = cmd.ExecuteNonQuery();
+                if (affectedRows > 0) {
+                    isAdded = true;
+                }
+            }
+            catch (Exception ex) {
+                Console.WriteLine(ex.Message);
+            }
+            finally {
+                conn.Close();
+            }
+            return isAdded;
+        }
+        public static bool isAccountNumExists(string accNum) {
+            bool isFound = false;
+            SqlConnection conn = new SqlConnection(connectionSettings);
+            string query = $"Select found = 1 from Clients where accountNumber = @AC";
+            SqlCommand cmd = new SqlCommand(query, conn);
+            cmd.Parameters.AddWithValue("@AC", accNum);
+            try {
+                conn.Open();
+                object result = cmd.ExecuteScalar();
+                if (result != null) {
+                    isFound = true;
+                }
+            }
+            catch (Exception ex) {
+                Console.WriteLine(ex.Message);
+            }
+            finally {
+                conn.Close();
+            }
+            return isFound;
+        }
     }
 }

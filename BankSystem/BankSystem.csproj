@@ -73,6 +73,12 @@
     <Compile Include="ClientsList.Designer.cs">
       <DependentUpon>ClientsList.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmAddClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAddClient.Designer.cs">
+      <DependentUpon>FrmAddClient.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,6 +98,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ClientsList.resx">
       <DependentUpon>ClientsList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAddClient.resx">
+      <DependentUpon>FrmAddClient.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation.resx">
       <DependentUpon>Presentation.cs</DependentUpon>
@@ -146,6 +155,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

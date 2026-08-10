@@ -28,5 +28,16 @@ namespace BankSystem {
         public string returnCurrentAccNumber() {
             return dgvClientsList.CurrentRow.Cells[0].Value.ToString();
         }
+
+        private void dgvClientsList_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e) {
+            if (e.ColumnIndex == 4) {
+                // أضفنا (?) بعد e.Value لمنع الـ NullReferenceException
+                if (e.Value == null || string.IsNullOrWhiteSpace(e.Value.ToString())) {
+                    e.Value = "Didn't make any transaction yet";
+                    e.FormattingApplied = true;
+                }
+
+            }
+        }
     }
 }
