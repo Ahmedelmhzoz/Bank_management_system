@@ -17,7 +17,7 @@ namespace BankSystem {
         private void btnDeleteClient_Click(object sender, EventArgs e) {
             string accountNumber = dgvClients.returnCurrentRowAccNumber();
 
-            if (MessageBox.Show($"Are you sure that u want to delete this Client [Account number: {accountNumber}]",
+            if (MessageBox.Show("Are you sure that u want to delete this Client" + Environment.NewLine + $"[Account number: {accountNumber}]",
                 "Delete client", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes) {
                 if (Clients.deleteAClient(accountNumber)) {
                     MessageBox.Show("Client is deleted successfully (-:", "Process went Successfully", MessageBoxButtons.OK
@@ -42,6 +42,14 @@ namespace BankSystem {
             frm.client = clint;
             frm.ShowDialog();
             dgvClients.updateResult();
+        }
+
+        private void detailsToolStripMenuItem_Click(object sender, EventArgs e) {
+            string accNum = dgvClients.returnCurrentRowAccNumber();
+            Clients client = new Clients();
+            client.fillClientWithDesiredRecord(accNum);
+            FrmClientDetails details = new FrmClientDetails(client);
+            details.ShowDialog();
         }
     }
 }

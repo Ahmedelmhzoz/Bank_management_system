@@ -123,7 +123,7 @@ namespace BankData
             }
             return isFound;
         }
-        public static bool findClient(string accNum, ref string pinCode, ref string name, ref string phone) {
+        public static bool findClient(string accNum, ref string pinCode, ref string name, ref string phone, ref decimal balance) {
             bool isFound = false;
             SqlConnection conn = new SqlConnection(connectionSettings);
             string query = $"Select * from Clients where accountNumber = @AC";
@@ -142,6 +142,8 @@ namespace BankData
                     }
                     name = reader[2].ToString();
                     phone = reader[3].ToString();
+                    if (reader[4] != DBNull.Value)
+                        balance = Convert.ToDecimal(reader[4]);
                 }
                 reader.Close();
             }
@@ -153,15 +155,22 @@ namespace BankData
             }
             return isFound;
         }
-        public static bool updateClient(string accNum, string pinCode, string name, string phone) {
+        public static bool updateClient(string accNum, string pinCode, string name, string phone, decimal balance) {
             bool isUpdated = false;
             SqlConnection conn = new SqlConnection(connectionSettings);
-            string query = "update Clients set pinCode = @PC, clientName = @N, phone = @P where accountNumber = @AN";
+            string query = "update Clients set pinCode = @PC, clientName = @N, phone = @P, " +
+                "balance = @b where accountNumber = @AN";
             SqlCommand cmd = new SqlCommand(query, conn);
             cmd.Parameters.AddWithValue("@AN", accNum);
             cmd.Parameters.AddWithValue("@PC", (string.IsNullOrEmpty(pinCode) ? DBNull.Value : (object)pinCode));
             cmd.Parameters.AddWithValue("@N", name);
             cmd.Parameters.AddWithValue("@P", phone);
+            if (balance != 0.0m) 
+                cmd.Parameters.AddWithValue("@b", balance);
+            
+            else 
+                cmd.Parameters.AddWithValue("@b", DBNull.Value);
+            
             try {
                 conn.Open();
                 int affectedRows = cmd.ExecuteNonQuery();

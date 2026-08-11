@@ -17,6 +17,7 @@ namespace BankBusiness
         public string clientName { get; set; }
         public string pinCode { get; set; }
         public string phone {  get; set; }
+        public decimal balance { get; set; }
 
         public enMode currentMode;
         public Clients() {
@@ -24,6 +25,7 @@ namespace BankBusiness
             clientName = "";
             pinCode = "";
             phone = "";
+            balance = 0.0m;
             currentMode = enMode.addClient;
         }
         public static DataTable getAllClients() {
@@ -41,11 +43,13 @@ namespace BankBusiness
         }
         public bool fillClientWithDesiredRecord(string accNumber) {
             string name = "", pc = "", p = "";
-            if (DataAccess.findClient(accNumber, ref pc, ref name, ref p)) {
+            decimal Balance = 0.0m;
+            if (DataAccess.findClient(accNumber, ref pc, ref name, ref p, ref Balance)) {
                 accountNumber = accNumber;
                 pinCode = pc;
                 clientName = name;
                 phone = p;
+                balance = Balance; 
                 currentMode = enMode.updateClient;
                 return true;
             }
@@ -62,8 +66,9 @@ namespace BankBusiness
             return DataAccess.isAccountNumExists(accountNumber);
         }
         bool updateAClient() {
-            return DataAccess.updateClient(accountNumber, pinCode, clientName, phone);
+            return DataAccess.updateClient(accountNumber, pinCode, clientName, phone, balance);
         }
+      
         public bool Save() {
             switch (currentMode) { 
                 case enMode.addClient: 

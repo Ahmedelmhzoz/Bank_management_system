@@ -36,7 +36,9 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
+    <Reference Include="System">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -73,11 +75,41 @@
     <Compile Include="ClientsList.Designer.cs">
       <DependentUpon>ClientsList.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmClientDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmClientDetails.Designer.cs">
+      <DependentUpon>FrmClientDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmClientProcess.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmClientProcess.Designer.cs">
       <DependentUpon>FrmClientProcess.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTotalBalances.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTotalBalances.Designer.cs">
+      <DependentUpon>FrmTotalBalances.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTransactionProcess.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTransactionProcess.Designer.cs">
+      <DependentUpon>FrmTransactionProcess.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTransactions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTransactions.Designer.cs">
+      <DependentUpon>FrmTransactions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PersonCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PersonCard.Designer.cs">
+      <DependentUpon>PersonCard.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation.cs">
       <SubType>Form</SubType>
@@ -99,8 +131,23 @@
     <EmbeddedResource Include="ClientsList.resx">
       <DependentUpon>ClientsList.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmClientDetails.resx">
+      <DependentUpon>FrmClientDetails.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmClientProcess.resx">
       <DependentUpon>FrmClientProcess.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTotalBalances.resx">
+      <DependentUpon>FrmTotalBalances.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTransactionProcess.resx">
+      <DependentUpon>FrmTransactionProcess.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTransactions.resx">
+      <DependentUpon>FrmTransactions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PersonCard.resx">
+      <DependentUpon>PersonCard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation.resx">
       <DependentUpon>Presentation.cs</DependentUpon>
@@ -167,6 +214,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\close2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\atm.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

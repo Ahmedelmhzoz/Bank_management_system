@@ -23,11 +23,27 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            this.components = new System.ComponentModel.Container();
+            this.lblProcess = new System.Windows.Forms.Label();
             this.btnDeleteClient = new System.Windows.Forms.Button();
             this.btnUpdateClient = new System.Windows.Forms.Button();
-            this.lblProcess = new System.Windows.Forms.Label();
             this.dgvClients = new BankSystem.ClientsFilter();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.detailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // lblProcess
+            // 
+            this.lblProcess.AutoSize = true;
+            this.lblProcess.BackColor = System.Drawing.Color.Cyan;
+            this.lblProcess.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProcess.ForeColor = System.Drawing.Color.Teal;
+            this.lblProcess.Location = new System.Drawing.Point(800, 47);
+            this.lblProcess.Name = "lblProcess";
+            this.lblProcess.Size = new System.Drawing.Size(379, 76);
+            this.lblProcess.TabIndex = 3;
+            this.lblProcess.Text = "Find Client:";
             // 
             // btnDeleteClient
             // 
@@ -53,25 +69,32 @@
             this.btnUpdateClient.UseVisualStyleBackColor = false;
             this.btnUpdateClient.Click += new System.EventHandler(this.btnUpdateClient_Click);
             // 
-            // lblProcess
-            // 
-            this.lblProcess.AutoSize = true;
-            this.lblProcess.BackColor = System.Drawing.Color.Cyan;
-            this.lblProcess.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProcess.ForeColor = System.Drawing.Color.Teal;
-            this.lblProcess.Location = new System.Drawing.Point(800, 47);
-            this.lblProcess.Name = "lblProcess";
-            this.lblProcess.Size = new System.Drawing.Size(379, 76);
-            this.lblProcess.TabIndex = 3;
-            this.lblProcess.Text = "Find Client:";
-            // 
             // dgvClients
             // 
             this.dgvClients.BackColor = System.Drawing.Color.Black;
+            this.dgvClients.ContextMenuStrip = this.contextMenuStrip1;
             this.dgvClients.Location = new System.Drawing.Point(-5, 135);
             this.dgvClients.Name = "dgvClients";
             this.dgvClients.Size = new System.Drawing.Size(1959, 1133);
             this.dgvClients.TabIndex = 0;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(40, 40);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.detailsToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(385, 127);
+            // 
+            // detailsToolStripMenuItem
+            // 
+            this.detailsToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 14.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.detailsToolStripMenuItem.ForeColor = System.Drawing.Color.Teal;
+            this.detailsToolStripMenuItem.Image = global::BankSystem.Properties.Resources.search;
+            this.detailsToolStripMenuItem.Name = "detailsToolStripMenuItem";
+            this.detailsToolStripMenuItem.Size = new System.Drawing.Size(384, 68);
+            this.detailsToolStripMenuItem.Text = "Details";
+            this.detailsToolStripMenuItem.Click += new System.EventHandler(this.detailsToolStripMenuItem_Click);
             // 
             // DealWithClients
             // 
@@ -86,6 +109,7 @@
             this.Name = "DealWithClients";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DealWithClients";
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -97,5 +121,7 @@
         private System.Windows.Forms.Button btnUpdateClient;
         private System.Windows.Forms.Button btnDeleteClient;
         private System.Windows.Forms.Label lblProcess;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem detailsToolStripMenuItem;
     }
 }
