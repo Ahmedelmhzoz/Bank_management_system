@@ -22,6 +22,18 @@ namespace BankSystem {
         }
 
         public string clientsNumInString { get { return dgvClientsList.Rows.Count.ToString(); } }
+        decimal TotalBalances() {
+            decimal totalBalance = 0;
+            foreach (DataGridViewRow row in dgvClientsList.Rows) {
+                object cellVal = row.Cells[4].Value;
+                if (cellVal != null) {
+                    decimal.TryParse(cellVal.ToString(), out decimal balance);
+                    totalBalance += balance;
+                }
+            }
+            return totalBalance;
+        }
+        public decimal totalBalances { get { return TotalBalances(); } }
 
         public void refreshData(DataTable newData) {
             dgvClientsList.DataSource = newData;
@@ -39,6 +51,12 @@ namespace BankSystem {
                     e.FormattingApplied = true;
                 }
 
+            }
+            if (e.ColumnIndex == 1) {
+                if (e.Value == null || string.IsNullOrWhiteSpace(e.Value.ToString())) {
+                    e.Value = "No PinCode assigned";
+                    e.FormattingApplied = true;
+                }
             }
         }
     }

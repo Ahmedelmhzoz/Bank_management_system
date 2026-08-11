@@ -19,6 +19,19 @@ namespace BankSystem {
             InitializeComponent();
             lblProcess.Text = process;
         }
+        private void FrmAddClient_Load(object sender, EventArgs e) {
+            if (client.currentMode == enMode.updateClient) {
+                txtAccNumber.Text = client.accountNumber;
+                txtAccNumber.Enabled = false;
+                txtName.Text = client.clientName;
+                txtPinCode.Text = client.pinCode;
+                txtPhoneNum.Text = client.phone;
+                txtName.Focus();
+            }
+            else {
+                txtAccNumber.Focus();
+            }
+        }
 
         public Clients client = new Clients();
         private void validatingTextBoxes(object sender, CancelEventArgs e) {
@@ -34,20 +47,6 @@ namespace BankSystem {
                 errorProvider1.SetError(txtBox, "");
             }
         }
-
-        private void FrmAddClient_Load(object sender, EventArgs e) {
-            if (client.currentMode == enMode.updateClient) {
-                txtAccNumber.Text = client.accountNumber;
-                txtAccNumber.Enabled = false;
-                txtName.Text = client.clientName;
-                txtPinCode.Text = client.pinCode;
-                txtPhoneNum.Text = client.phone;
-                txtName.Focus();
-            } else {
-                txtAccNumber.Focus();
-            }
-        }
-
         private void btnSave_Click(object sender, EventArgs e) {
             if (string.IsNullOrEmpty(txtAccNumber.Text) ||
                 string.IsNullOrEmpty(txtName.Text) ||

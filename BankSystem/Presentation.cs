@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BankSystem {
+    public enum entransactionMode { deposit = 0, withdraw = 1, none = 2 }
+
     public partial class Presentation : Form {
         public Presentation() {
             InitializeComponent();
@@ -57,6 +59,28 @@ namespace BankSystem {
         private void btnClose_Click(object sender, EventArgs e) {
             this.Close();
             Application.Exit();
+        }
+
+        private void btnTransactions_Click(object sender, EventArgs e) {
+            FrmTransactions frm = new FrmTransactions(entransactionMode.none);
+            frm.ShowDialog();
+        }
+
+        private void depositToolStripMenuItem_Click(object sender, EventArgs e) {
+            FrmTransactions frm = new FrmTransactions(entransactionMode.deposit);
+            frm.ShowDialog();
+
+        }
+
+        private void withdrawToolStripMenuItem_Click(object sender, EventArgs e) {
+            FrmTransactions frm = new FrmTransactions(entransactionMode.withdraw);
+            frm.ShowDialog();
+
+        }
+
+        private void totalBalancesToolStripMenuItem_Click(object sender, EventArgs e) {
+            FrmTotalBalances frm = new FrmTotalBalances();
+            frm.ShowDialog();
         }
     }
 }

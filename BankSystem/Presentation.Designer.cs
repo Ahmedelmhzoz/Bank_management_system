@@ -31,6 +31,9 @@
             this.addClientToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.FindCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.transactionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.depositToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.withdrawToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.totalBalancesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manageUsersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.profileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
@@ -102,12 +105,40 @@
             // transactionsToolStripMenuItem
             // 
             this.transactionsToolStripMenuItem.BackColor = System.Drawing.Color.Teal;
+            this.transactionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.depositToolStripMenuItem,
+            this.withdrawToolStripMenuItem,
+            this.totalBalancesToolStripMenuItem});
             this.transactionsToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 14.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.transactionsToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.transactionsToolStripMenuItem.Image = global::BankSystem.Properties.Resources.transaction1;
             this.transactionsToolStripMenuItem.Name = "transactionsToolStripMenuItem";
             this.transactionsToolStripMenuItem.Size = new System.Drawing.Size(365, 66);
             this.transactionsToolStripMenuItem.Text = "Transactions";
+            // 
+            // depositToolStripMenuItem
+            // 
+            this.depositToolStripMenuItem.ForeColor = System.Drawing.Color.Teal;
+            this.depositToolStripMenuItem.Name = "depositToolStripMenuItem";
+            this.depositToolStripMenuItem.Size = new System.Drawing.Size(514, 70);
+            this.depositToolStripMenuItem.Text = "Deposit";
+            this.depositToolStripMenuItem.Click += new System.EventHandler(this.depositToolStripMenuItem_Click);
+            // 
+            // withdrawToolStripMenuItem
+            // 
+            this.withdrawToolStripMenuItem.ForeColor = System.Drawing.Color.Teal;
+            this.withdrawToolStripMenuItem.Name = "withdrawToolStripMenuItem";
+            this.withdrawToolStripMenuItem.Size = new System.Drawing.Size(514, 70);
+            this.withdrawToolStripMenuItem.Text = "Withdraw";
+            this.withdrawToolStripMenuItem.Click += new System.EventHandler(this.withdrawToolStripMenuItem_Click);
+            // 
+            // totalBalancesToolStripMenuItem
+            // 
+            this.totalBalancesToolStripMenuItem.ForeColor = System.Drawing.Color.Teal;
+            this.totalBalancesToolStripMenuItem.Name = "totalBalancesToolStripMenuItem";
+            this.totalBalancesToolStripMenuItem.Size = new System.Drawing.Size(514, 70);
+            this.totalBalancesToolStripMenuItem.Text = "Total Balances";
+            this.totalBalancesToolStripMenuItem.Click += new System.EventHandler(this.totalBalancesToolStripMenuItem_Click);
             // 
             // manageUsersToolStripMenuItem
             // 
@@ -202,6 +233,7 @@
             this.btnTransactions.TabIndex = 6;
             this.btnTransactions.Text = "Transactions";
             this.btnTransactions.UseVisualStyleBackColor = false;
+            this.btnTransactions.Click += new System.EventHandler(this.btnTransactions_Click);
             // 
             // btnUpdateClient
             // 
@@ -291,6 +323,9 @@
         private System.Windows.Forms.ToolStripMenuItem addClientToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem FindCToolStripMenuItem;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.ToolStripMenuItem depositToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem withdrawToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem totalBalancesToolStripMenuItem;
     }
 }
 

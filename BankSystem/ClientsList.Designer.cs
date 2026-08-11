@@ -23,10 +23,14 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
-            this.dgvClients1 = new BankSystem.dgvClients();
             this.label2 = new System.Windows.Forms.Label();
             this.lblClientsNum = new System.Windows.Forms.Label();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.detailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dgvClients1 = new BankSystem.dgvClients();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -39,14 +43,6 @@
             this.label1.Size = new System.Drawing.Size(365, 54);
             this.label1.TabIndex = 1;
             this.label1.Text = "Clinets number:";
-            // 
-            // dgvClients1
-            // 
-            this.dgvClients1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.dgvClients1.Location = new System.Drawing.Point(-10, 229);
-            this.dgvClients1.Name = "dgvClients1";
-            this.dgvClients1.Size = new System.Drawing.Size(1959, 1172);
-            this.dgvClients1.TabIndex = 0;
             // 
             // label2
             // 
@@ -71,6 +67,33 @@
             this.lblClientsNum.TabIndex = 3;
             this.lblClientsNum.Text = "Unknown";
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(40, 40);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.detailsToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(280, 72);
+            // 
+            // detailsToolStripMenuItem
+            // 
+            this.detailsToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 14.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.detailsToolStripMenuItem.ForeColor = System.Drawing.Color.Teal;
+            this.detailsToolStripMenuItem.Image = global::BankSystem.Properties.Resources.search;
+            this.detailsToolStripMenuItem.Name = "detailsToolStripMenuItem";
+            this.detailsToolStripMenuItem.Size = new System.Drawing.Size(279, 68);
+            this.detailsToolStripMenuItem.Text = "Details";
+            this.detailsToolStripMenuItem.Click += new System.EventHandler(this.detailsToolStripMenuItem_Click);
+            // 
+            // dgvClients1
+            // 
+            this.dgvClients1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.dgvClients1.ContextMenuStrip = this.contextMenuStrip1;
+            this.dgvClients1.Location = new System.Drawing.Point(-10, 229);
+            this.dgvClients1.Name = "dgvClients1";
+            this.dgvClients1.Size = new System.Drawing.Size(1959, 1172);
+            this.dgvClients1.TabIndex = 0;
+            // 
             // ClientsList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
@@ -85,6 +108,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.ClientsList_Load);
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -96,5 +120,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblClientsNum;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem detailsToolStripMenuItem;
     }
 }
