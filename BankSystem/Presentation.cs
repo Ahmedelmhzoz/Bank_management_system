@@ -7,16 +7,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using BankBusiness;
 namespace BankSystem {
     public enum entransactionMode { deposit = 0, withdraw = 1, none = 2 }
+    public enum enProcessesPermissions { enAddClient = 1, enShowClient = 2, enFindClient = 4, enUpdateClient = 8,
+    enDeleteClient = 16, enTransactions = 32, enShowUsers = 64, enAddUser = 128}
 
     public partial class Presentation : Form {
+        private Users currentUser = new Users();
+
+        FrmManageUsersMenu userMenu = new FrmManageUsersMenu();
         public Presentation() {
             InitializeComponent();
         }
-
-
+        public Presentation(Users usr) {
+            InitializeComponent();
+            currentUser = usr;
+        }
         private void btnShowClients_Click(object sender, EventArgs e) {
             ClientsList cf = new ClientsList();
             cf.ShowDialog();
@@ -81,6 +88,19 @@ namespace BankSystem {
         private void totalBalancesToolStripMenuItem_Click(object sender, EventArgs e) {
             FrmTotalBalances frm = new FrmTotalBalances();
             frm.ShowDialog();
+        }
+
+        private void btnManageUsers_Click(object sender, EventArgs e) {
+
+        }
+
+        private void Presentation_Load(object sender, EventArgs e) {
+            lblUsername.Text = currentUser.username;
+        }
+
+        private void profileToolStripMenuItem_Click(object sender, EventArgs e) {
+            FrmUserProfile Frm = new FrmUserProfile(currentUser);
+            Frm.ShowDialog();
         }
     }
 }

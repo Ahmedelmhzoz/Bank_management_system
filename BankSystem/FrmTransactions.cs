@@ -70,7 +70,7 @@ namespace BankSystem {
                 else
                     mode = entransactionMode.withdraw;
                 if (client.balance == 0.0m && mode == entransactionMode.withdraw) {
-                    if (DialogResult.OK == MessageBox.Show("There are no fund in your bank account to withdraw يا فقير", "Error",
+                    if (DialogResult.OK == MessageBox.Show("There are no funds in your bank account to withdraw يا فقير", "Error",
                         MessageBoxButtons.OK, MessageBoxIcon.Error)) {
                         return;
                     }

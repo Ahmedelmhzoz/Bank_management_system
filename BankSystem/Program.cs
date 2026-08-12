@@ -13,7 +13,7 @@ namespace BankSystem {
         static void Main() {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Presentation());
+            Application.Run(new FrmLogin());
         }
     }
 }

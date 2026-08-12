@@ -20,7 +20,7 @@ namespace BankSystem {
             lblProcess.Text = process;
         }
         private void FrmAddClient_Load(object sender, EventArgs e) {
-            if (client.currentMode == enMode.updateClient) {
+            if (client.currentMode == enClientMode.updateClient) {
                 txtAccNumber.Text = client.accountNumber;
                 txtAccNumber.Enabled = false;
                 txtName.Text = client.clientName;
@@ -58,7 +58,7 @@ namespace BankSystem {
                 client.clientName = txtName.Text;
                 client.phone = txtPhoneNum.Text;
                 client.pinCode = txtPinCode.Text;
-                if (client.currentMode == enMode.addClient && Clients.isAccountNumberTaken(client.accountNumber)) {
+                if (client.currentMode == enClientMode.addClient && Clients.isAccountNumberTaken(client.accountNumber)) {
                     MessageBox.Show("Account number is taken, please enter a new account number",
                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Net;
+using System.Net.Http;
 using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,7 +12,8 @@ using static BankData.DataAccess;
 
 namespace BankBusiness
 {
-    public enum enMode { addClient = 0, updateClient = 1 }
+    public enum enClientMode { addClient = 0, updateClient = 1 }
+    public enum enUserMode { addUser = 0, updateUser = 1} 
     public class Clients {
         public string accountNumber {  get; set; }
         public string clientName { get; set; }
@@ -19,14 +21,14 @@ namespace BankBusiness
         public string phone {  get; set; }
         public decimal balance { get; set; }
 
-        public enMode currentMode;
+        public enClientMode currentMode;
         public Clients() {
             accountNumber = "";
             clientName = "";
             pinCode = "";
             phone = "";
             balance = 0.0m;
-            currentMode = enMode.addClient;
+            currentMode = enClientMode.addClient;
         }
         public static DataTable getAllClients() {
             return DataAccess.getClients();
@@ -50,7 +52,7 @@ namespace BankBusiness
                 clientName = name;
                 phone = p;
                 balance = Balance; 
-                currentMode = enMode.updateClient;
+                currentMode = enClientMode.updateClient;
                 return true;
             }
             else
@@ -71,13 +73,67 @@ namespace BankBusiness
       
         public bool Save() {
             switch (currentMode) { 
-                case enMode.addClient: 
+                case enClientMode.addClient: 
                       if (addNewClient()) {
-                            currentMode = enMode.updateClient;
+                            currentMode = enClientMode.updateClient;
                             return true;
                       }
                       return false;
-                 case enMode.updateClient: return updateAClient();
+                 case enClientMode.updateClient: return updateAClient();
+                default: return false;
+            }
+        }
+    }
+
+    public class Users {
+        public string username { get; set; }
+        public string password { get; set; }
+        public string imagePath { get; set; }
+        public int permissionNum { get; set; }
+
+        public enUserMode currentMode = enUserMode.addUser;
+        public Users() {
+            username = "";
+            password = "";
+            imagePath = "";
+            permissionNum  = -2;
+        }
+        public bool findUserAndGetData(string Username, string Password) {
+            string imgPath = "";
+            int Permission = -2;
+            if (DataAccess.findUser(Username, Password, ref Permission, ref imgPath)) {
+                username = Username;
+                password = Password;
+                imagePath = imgPath;
+                permissionNum = Permission;
+                currentMode = enUserMode.updateUser;
+                return true;
+            }
+            else
+                return false;
+        }
+
+        bool addNewUser() {
+            return DataAccess.addUser(username, password, permissionNum, imagePath);
+        }
+        public static bool isUsernameTaken(string userName) {
+            return DataAccess.isUserOrPassExists(userName, true);
+        }
+        public static bool isPasswordTaken(string Password) {
+            return DataAccess.isUserOrPassExists(Password, false); // is a flag to determine what the function will search
+        }
+        bool updateAUser() {
+            return DataAccess.updateUser(username, password, permissionNum, imagePath);
+        }
+        public bool Save() {
+            switch (currentMode) {
+                case enUserMode.addUser:
+                    if (addNewUser()) {
+                        currentMode = enUserMode.updateUser;
+                        return true;
+                    }
+                    return false;
+                case enUserMode.updateUser: return updateAUser();
                 default: return false;
             }
         }

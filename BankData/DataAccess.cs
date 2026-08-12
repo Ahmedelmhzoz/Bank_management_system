@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace BankData
 {
@@ -185,6 +186,105 @@ namespace BankData
                 conn.Close();
             }
             return isUpdated;
+        }
+
+        public static bool findUser(string username, string pass, ref int permission, ref string imagePath) {
+            bool isFound = false;
+            SqlConnection conn = new SqlConnection(connectionSettings);
+            string query = "select * from Users where username = @U and password = @P";
+            SqlCommand cmd = new SqlCommand(query, conn);
+            cmd.Parameters.AddWithValue("@U", username);
+            cmd.Parameters.AddWithValue("@P", pass);
+            try {
+                conn.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read()) {
+                    isFound = true;
+                    permission = Convert.ToInt32(reader[2]);
+                    imagePath = (reader[3] != DBNull.Value ? reader[3].ToString() : "");
+                }
+                reader.Close();
+            }
+            catch (Exception ex) {
+                Console.WriteLine(ex.Message);
+            }
+            finally {
+                conn.Close();
+            }
+            return isFound;
+        }
+        public static bool addUser(string username, string password, int permissionNum, string imagePath) {
+            bool isAdded = false;
+            SqlConnection conn = new SqlConnection(connectionSettings);
+            string query = "Insert into Users Values (@User, @Pass, @per, @img)";
+            SqlCommand cmd = new SqlCommand(query, conn);
+            cmd.Parameters.AddWithValue("@User", username);
+            cmd.Parameters.AddWithValue("@img", (string.IsNullOrEmpty(imagePath) ? DBNull.Value : (object)imagePath));
+            cmd.Parameters.AddWithValue("@per", permissionNum);
+            cmd.Parameters.AddWithValue("@Pass", password);
+            try {
+                conn.Open();
+                int affectedRows = cmd.ExecuteNonQuery();
+                if (affectedRows > 0) {
+                    isAdded = true;
+                }
+            }
+            catch (Exception ex) {
+                Console.WriteLine(ex.Message);
+            }
+            finally {
+                conn.Close();
+            }
+            return isAdded;
+        }
+
+        public static bool isUserOrPassExists(string userData, bool isUsername) {
+            bool isHere = false;
+            SqlConnection conn = new SqlConnection(connectionSettings);
+            string searchObject = (isUsername ? "username" : "password");
+            string query = $"select found = 1 from Users  where {searchObject} = @data";
+            SqlCommand cmd = new SqlCommand(query, conn);
+            cmd.Parameters.AddWithValue("@data", userData);
+            try {
+                conn.Open();
+                object result = cmd.ExecuteScalar();
+                if (result != null) {
+                    isHere = true;
+                }
+            }
+            catch (Exception ex) {
+                Console.WriteLine(ex.Message);
+            }
+            finally {
+                conn.Close();
+            }
+            return isHere;
+        }
+
+        public static bool updateUser(string username, string password, int permissionNum, string imagePath) {
+            bool updated = false;
+            SqlConnection conn = new SqlConnection(connectionSettings);
+            string query = "UPDATE Users set password = @Pass, permission = @per, imagePath = @img " +
+                "WHERE username = @User";
+            SqlCommand cmd = new SqlCommand(query, conn);
+            cmd.Parameters.AddWithValue("@Pass", password);
+            cmd.Parameters.AddWithValue("@per", permissionNum);
+            cmd.Parameters.AddWithValue("@img", (string.IsNullOrEmpty(imagePath) ? DBNull.Value : (object)imagePath));
+            cmd.Parameters.AddWithValue("@User", username);
+            try {
+                conn.Open();
+                int affectedRows = cmd.ExecuteNonQuery();
+                if (affectedRows > 0) {
+                    updated = true;
+                }
+            }
+            catch (Exception ex) {
+                Console.WriteLine(ex.Message);
+            }
+            finally {
+                conn.Close();
+            }
+            return updated;
         }
     }
 }
