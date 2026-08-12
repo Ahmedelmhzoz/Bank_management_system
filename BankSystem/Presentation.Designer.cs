@@ -26,6 +26,18 @@
             this.components = new System.ComponentModel.Container();
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnShowClients = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnFindClient = new System.Windows.Forms.Button();
+            this.btnAddClient = new System.Windows.Forms.Button();
+            this.btnTransactions = new System.Windows.Forms.Button();
+            this.btnUpdateClient = new System.Windows.Forms.Button();
+            this.btnDeleteClient = new System.Windows.Forms.Button();
+            this.btnManageUsers = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lblUsername = new System.Windows.Forms.Label();
+            this.btnClose = new System.Windows.Forms.Button();
             this.clientsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.showClientsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addClientToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -36,15 +48,7 @@
             this.totalBalancesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manageUsersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.profileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnShowClients = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btnFindClient = new System.Windows.Forms.Button();
-            this.btnAddClient = new System.Windows.Forms.Button();
-            this.btnTransactions = new System.Windows.Forms.Button();
-            this.btnUpdateClient = new System.Windows.Forms.Button();
-            this.btnDeleteClient = new System.Windows.Forms.Button();
-            this.btnClose = new System.Windows.Forms.Button();
+            this.viewProfileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,6 +67,158 @@
             this.menuStrip1.Size = new System.Drawing.Size(2041, 70);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Teal;
+            this.label1.Font = new System.Drawing.Font("Microsoft Himalaya", 30.9F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.Color.MediumSpringGreen;
+            this.label1.Location = new System.Drawing.Point(636, 159);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(785, 103);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Bank Management system";
+            // 
+            // btnShowClients
+            // 
+            this.btnShowClients.BackColor = System.Drawing.Color.Teal;
+            this.btnShowClients.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnShowClients.ForeColor = System.Drawing.Color.Cyan;
+            this.btnShowClients.Location = new System.Drawing.Point(1407, 458);
+            this.btnShowClients.Name = "btnShowClients";
+            this.btnShowClients.Size = new System.Drawing.Size(354, 129);
+            this.btnShowClients.TabIndex = 2;
+            this.btnShowClients.Text = "Show clients list";
+            this.btnShowClients.UseVisualStyleBackColor = false;
+            this.btnShowClients.Click += new System.EventHandler(this.btnShowClients_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Teal;
+            this.label2.Location = new System.Drawing.Point(782, 329);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(467, 69);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Fast processes:";
+            // 
+            // btnFindClient
+            // 
+            this.btnFindClient.BackColor = System.Drawing.Color.Teal;
+            this.btnFindClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFindClient.ForeColor = System.Drawing.Color.Cyan;
+            this.btnFindClient.Location = new System.Drawing.Point(246, 739);
+            this.btnFindClient.Name = "btnFindClient";
+            this.btnFindClient.Size = new System.Drawing.Size(354, 129);
+            this.btnFindClient.TabIndex = 4;
+            this.btnFindClient.Text = "Find client";
+            this.btnFindClient.UseVisualStyleBackColor = false;
+            this.btnFindClient.Click += new System.EventHandler(this.AlterClientClick);
+            // 
+            // btnAddClient
+            // 
+            this.btnAddClient.BackColor = System.Drawing.Color.Teal;
+            this.btnAddClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddClient.ForeColor = System.Drawing.Color.Cyan;
+            this.btnAddClient.Location = new System.Drawing.Point(246, 458);
+            this.btnAddClient.Name = "btnAddClient";
+            this.btnAddClient.Size = new System.Drawing.Size(354, 129);
+            this.btnAddClient.TabIndex = 5;
+            this.btnAddClient.Text = "Add client";
+            this.btnAddClient.UseVisualStyleBackColor = false;
+            this.btnAddClient.Click += new System.EventHandler(this.btnAddClient_Click);
+            // 
+            // btnTransactions
+            // 
+            this.btnTransactions.BackColor = System.Drawing.Color.Teal;
+            this.btnTransactions.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTransactions.ForeColor = System.Drawing.Color.Cyan;
+            this.btnTransactions.Location = new System.Drawing.Point(1407, 739);
+            this.btnTransactions.Name = "btnTransactions";
+            this.btnTransactions.Size = new System.Drawing.Size(354, 129);
+            this.btnTransactions.TabIndex = 6;
+            this.btnTransactions.Text = "Transactions";
+            this.btnTransactions.UseVisualStyleBackColor = false;
+            this.btnTransactions.Click += new System.EventHandler(this.btnTransactions_Click);
+            // 
+            // btnUpdateClient
+            // 
+            this.btnUpdateClient.BackColor = System.Drawing.Color.Teal;
+            this.btnUpdateClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdateClient.ForeColor = System.Drawing.Color.Cyan;
+            this.btnUpdateClient.Location = new System.Drawing.Point(246, 1023);
+            this.btnUpdateClient.Name = "btnUpdateClient";
+            this.btnUpdateClient.Size = new System.Drawing.Size(354, 129);
+            this.btnUpdateClient.TabIndex = 7;
+            this.btnUpdateClient.Text = "Update client";
+            this.btnUpdateClient.UseVisualStyleBackColor = false;
+            this.btnUpdateClient.Click += new System.EventHandler(this.AlterClientClick);
+            // 
+            // btnDeleteClient
+            // 
+            this.btnDeleteClient.BackColor = System.Drawing.Color.Teal;
+            this.btnDeleteClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteClient.ForeColor = System.Drawing.Color.Cyan;
+            this.btnDeleteClient.Location = new System.Drawing.Point(1407, 1036);
+            this.btnDeleteClient.Name = "btnDeleteClient";
+            this.btnDeleteClient.Size = new System.Drawing.Size(354, 129);
+            this.btnDeleteClient.TabIndex = 8;
+            this.btnDeleteClient.Text = "Delete client";
+            this.btnDeleteClient.UseVisualStyleBackColor = false;
+            this.btnDeleteClient.Click += new System.EventHandler(this.AlterClientClick);
+            // 
+            // btnManageUsers
+            // 
+            this.btnManageUsers.BackColor = System.Drawing.Color.Teal;
+            this.btnManageUsers.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnManageUsers.ForeColor = System.Drawing.Color.Cyan;
+            this.btnManageUsers.Location = new System.Drawing.Point(831, 739);
+            this.btnManageUsers.Name = "btnManageUsers";
+            this.btnManageUsers.Size = new System.Drawing.Size(354, 129);
+            this.btnManageUsers.TabIndex = 10;
+            this.btnManageUsers.Tag = "processesPermissions.";
+            this.btnManageUsers.Text = "Manage users";
+            this.btnManageUsers.UseVisualStyleBackColor = false;
+            this.btnManageUsers.Click += new System.EventHandler(this.btnManageUsers_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold);
+            this.label3.ForeColor = System.Drawing.Color.Teal;
+            this.label3.Location = new System.Drawing.Point(44, 1280);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(137, 52);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "user: ";
+            // 
+            // lblUsername
+            // 
+            this.lblUsername.AutoSize = true;
+            this.lblUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
+            this.lblUsername.ForeColor = System.Drawing.Color.Chartreuse;
+            this.lblUsername.Location = new System.Drawing.Point(159, 1286);
+            this.lblUsername.Name = "lblUsername";
+            this.lblUsername.Size = new System.Drawing.Size(117, 42);
+            this.lblUsername.TabIndex = 12;
+            this.lblUsername.Text = "user: ";
+            // 
+            // btnClose
+            // 
+            this.btnClose.BackColor = System.Drawing.Color.Teal;
+            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
+            this.btnClose.ForeColor = System.Drawing.Color.Cyan;
+            this.btnClose.Image = global::BankSystem.Properties.Resources.close;
+            this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnClose.Location = new System.Drawing.Point(1755, 1291);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(262, 73);
+            this.btnClose.TabIndex = 9;
+            this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // clientsToolStripMenuItem
             // 
@@ -153,128 +309,22 @@
             // profileToolStripMenuItem
             // 
             this.profileToolStripMenuItem.BackColor = System.Drawing.Color.Teal;
+            this.profileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.viewProfileToolStripMenuItem});
             this.profileToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 14.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.profileToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.profileToolStripMenuItem.Image = global::BankSystem.Properties.Resources.user;
             this.profileToolStripMenuItem.Name = "profileToolStripMenuItem";
             this.profileToolStripMenuItem.Size = new System.Drawing.Size(236, 66);
             this.profileToolStripMenuItem.Text = "Profile";
+            this.profileToolStripMenuItem.Click += new System.EventHandler(this.profileToolStripMenuItem_Click);
             // 
-            // label1
+            // viewProfileToolStripMenuItem
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Teal;
-            this.label1.Font = new System.Drawing.Font("Microsoft Himalaya", 30.9F, System.Drawing.FontStyle.Bold);
-            this.label1.ForeColor = System.Drawing.Color.MediumSpringGreen;
-            this.label1.Location = new System.Drawing.Point(636, 159);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(785, 103);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Bank Management system";
-            // 
-            // btnShowClients
-            // 
-            this.btnShowClients.BackColor = System.Drawing.Color.Teal;
-            this.btnShowClients.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnShowClients.ForeColor = System.Drawing.Color.Cyan;
-            this.btnShowClients.Location = new System.Drawing.Point(1302, 458);
-            this.btnShowClients.Name = "btnShowClients";
-            this.btnShowClients.Size = new System.Drawing.Size(354, 129);
-            this.btnShowClients.TabIndex = 2;
-            this.btnShowClients.Text = "Show clients list";
-            this.btnShowClients.UseVisualStyleBackColor = false;
-            this.btnShowClients.Click += new System.EventHandler(this.btnShowClients_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Teal;
-            this.label2.Location = new System.Drawing.Point(782, 329);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(467, 69);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Fast processes:";
-            // 
-            // btnFindClient
-            // 
-            this.btnFindClient.BackColor = System.Drawing.Color.Teal;
-            this.btnFindClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFindClient.ForeColor = System.Drawing.Color.Cyan;
-            this.btnFindClient.Location = new System.Drawing.Point(386, 739);
-            this.btnFindClient.Name = "btnFindClient";
-            this.btnFindClient.Size = new System.Drawing.Size(354, 129);
-            this.btnFindClient.TabIndex = 4;
-            this.btnFindClient.Text = "Find client";
-            this.btnFindClient.UseVisualStyleBackColor = false;
-            this.btnFindClient.Click += new System.EventHandler(this.AlterClientClick);
-            // 
-            // btnAddClient
-            // 
-            this.btnAddClient.BackColor = System.Drawing.Color.Teal;
-            this.btnAddClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddClient.ForeColor = System.Drawing.Color.Cyan;
-            this.btnAddClient.Location = new System.Drawing.Point(386, 458);
-            this.btnAddClient.Name = "btnAddClient";
-            this.btnAddClient.Size = new System.Drawing.Size(354, 129);
-            this.btnAddClient.TabIndex = 5;
-            this.btnAddClient.Text = "Add client";
-            this.btnAddClient.UseVisualStyleBackColor = false;
-            this.btnAddClient.Click += new System.EventHandler(this.btnAddClient_Click);
-            // 
-            // btnTransactions
-            // 
-            this.btnTransactions.BackColor = System.Drawing.Color.Teal;
-            this.btnTransactions.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTransactions.ForeColor = System.Drawing.Color.Cyan;
-            this.btnTransactions.Location = new System.Drawing.Point(1302, 739);
-            this.btnTransactions.Name = "btnTransactions";
-            this.btnTransactions.Size = new System.Drawing.Size(354, 129);
-            this.btnTransactions.TabIndex = 6;
-            this.btnTransactions.Text = "Transactions";
-            this.btnTransactions.UseVisualStyleBackColor = false;
-            this.btnTransactions.Click += new System.EventHandler(this.btnTransactions_Click);
-            // 
-            // btnUpdateClient
-            // 
-            this.btnUpdateClient.BackColor = System.Drawing.Color.Teal;
-            this.btnUpdateClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdateClient.ForeColor = System.Drawing.Color.Cyan;
-            this.btnUpdateClient.Location = new System.Drawing.Point(386, 1025);
-            this.btnUpdateClient.Name = "btnUpdateClient";
-            this.btnUpdateClient.Size = new System.Drawing.Size(354, 129);
-            this.btnUpdateClient.TabIndex = 7;
-            this.btnUpdateClient.Text = "Update client";
-            this.btnUpdateClient.UseVisualStyleBackColor = false;
-            this.btnUpdateClient.Click += new System.EventHandler(this.AlterClientClick);
-            // 
-            // btnDeleteClient
-            // 
-            this.btnDeleteClient.BackColor = System.Drawing.Color.Teal;
-            this.btnDeleteClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeleteClient.ForeColor = System.Drawing.Color.Cyan;
-            this.btnDeleteClient.Location = new System.Drawing.Point(1302, 1034);
-            this.btnDeleteClient.Name = "btnDeleteClient";
-            this.btnDeleteClient.Size = new System.Drawing.Size(354, 129);
-            this.btnDeleteClient.TabIndex = 8;
-            this.btnDeleteClient.Text = "Delete client";
-            this.btnDeleteClient.UseVisualStyleBackColor = false;
-            this.btnDeleteClient.Click += new System.EventHandler(this.AlterClientClick);
-            // 
-            // btnClose
-            // 
-            this.btnClose.BackColor = System.Drawing.Color.Teal;
-            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
-            this.btnClose.ForeColor = System.Drawing.Color.Cyan;
-            this.btnClose.Image = global::BankSystem.Properties.Resources.close;
-            this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(1753, 1265);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(262, 73);
-            this.btnClose.TabIndex = 9;
-            this.btnClose.Text = "Close";
-            this.btnClose.UseVisualStyleBackColor = false;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            this.viewProfileToolStripMenuItem.ForeColor = System.Drawing.Color.Teal;
+            this.viewProfileToolStripMenuItem.Name = "viewProfileToolStripMenuItem";
+            this.viewProfileToolStripMenuItem.Size = new System.Drawing.Size(466, 70);
+            this.viewProfileToolStripMenuItem.Text = "View profile";
             // 
             // Presentation
             // 
@@ -282,6 +332,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(2041, 1388);
+            this.Controls.Add(this.lblUsername);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.btnManageUsers);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnDeleteClient);
             this.Controls.Add(this.btnUpdateClient);
@@ -296,6 +349,7 @@
             this.Name = "Presentation";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bank system menu";
+            this.Load += new System.EventHandler(this.Presentation_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -326,6 +380,10 @@
         private System.Windows.Forms.ToolStripMenuItem depositToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem withdrawToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem totalBalancesToolStripMenuItem;
+        private System.Windows.Forms.Button btnManageUsers;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblUsername;
+        private System.Windows.Forms.ToolStripMenuItem viewProfileToolStripMenuItem;
     }
 }
 

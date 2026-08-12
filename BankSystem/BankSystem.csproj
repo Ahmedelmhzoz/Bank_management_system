@@ -87,6 +87,18 @@
     <Compile Include="FrmClientProcess.Designer.cs">
       <DependentUpon>FrmClientProcess.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmManageUsersMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmManageUsersMenu.Designer.cs">
+      <DependentUpon>FrmManageUsersMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmTotalBalances.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,6 +117,12 @@
     <Compile Include="FrmTransactions.Designer.cs">
       <DependentUpon>FrmTransactions.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmUserProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmUserProfile.Designer.cs">
+      <DependentUpon>FrmUserProfile.cs</DependentUpon>
+    </Compile>
     <Compile Include="PersonCard.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -116,6 +134,12 @@
     </Compile>
     <Compile Include="Presentation.Designer.cs">
       <DependentUpon>Presentation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProfileCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ProfileCard.Designer.cs">
+      <DependentUpon>ProfileCard.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -137,6 +161,9 @@
     <EmbeddedResource Include="FrmClientProcess.resx">
       <DependentUpon>FrmClientProcess.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmTotalBalances.resx">
       <DependentUpon>FrmTotalBalances.cs</DependentUpon>
     </EmbeddedResource>
@@ -146,11 +173,17 @@
     <EmbeddedResource Include="FrmTransactions.resx">
       <DependentUpon>FrmTransactions.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmUserProfile.resx">
+      <DependentUpon>FrmUserProfile.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PersonCard.resx">
       <DependentUpon>PersonCard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation.resx">
       <DependentUpon>Presentation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProfileCard.resx">
+      <DependentUpon>ProfileCard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -220,6 +253,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\atm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loginBack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\userName.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Password.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\profile.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
