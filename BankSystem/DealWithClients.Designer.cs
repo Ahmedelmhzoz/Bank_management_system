@@ -27,9 +27,9 @@
             this.lblProcess = new System.Windows.Forms.Label();
             this.btnDeleteClient = new System.Windows.Forms.Button();
             this.btnUpdateClient = new System.Windows.Forms.Button();
-            this.dgvClients = new BankSystem.ClientsFilter();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.detailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dgvClients = new BankSystem.ClientsFilter();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,7 +50,8 @@
             this.btnDeleteClient.BackColor = System.Drawing.Color.Teal;
             this.btnDeleteClient.BackgroundImage = global::BankSystem.Properties.Resources.delete;
             this.btnDeleteClient.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnDeleteClient.Location = new System.Drawing.Point(1698, 191);
+            this.btnDeleteClient.Enabled = false;
+            this.btnDeleteClient.Location = new System.Drawing.Point(1680, 191);
             this.btnDeleteClient.Name = "btnDeleteClient";
             this.btnDeleteClient.Size = new System.Drawing.Size(196, 100);
             this.btnDeleteClient.TabIndex = 2;
@@ -62,12 +63,31 @@
             this.btnUpdateClient.BackColor = System.Drawing.Color.Teal;
             this.btnUpdateClient.BackgroundImage = global::BankSystem.Properties.Resources.Update;
             this.btnUpdateClient.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnUpdateClient.Enabled = false;
             this.btnUpdateClient.Location = new System.Drawing.Point(1395, 191);
             this.btnUpdateClient.Name = "btnUpdateClient";
             this.btnUpdateClient.Size = new System.Drawing.Size(196, 100);
             this.btnUpdateClient.TabIndex = 1;
             this.btnUpdateClient.UseVisualStyleBackColor = false;
             this.btnUpdateClient.Click += new System.EventHandler(this.btnUpdateClient_Click);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(40, 40);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.detailsToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(280, 72);
+            // 
+            // detailsToolStripMenuItem
+            // 
+            this.detailsToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 14.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.detailsToolStripMenuItem.ForeColor = System.Drawing.Color.Teal;
+            this.detailsToolStripMenuItem.Image = global::BankSystem.Properties.Resources.search;
+            this.detailsToolStripMenuItem.Name = "detailsToolStripMenuItem";
+            this.detailsToolStripMenuItem.Size = new System.Drawing.Size(279, 68);
+            this.detailsToolStripMenuItem.Text = "Details";
+            this.detailsToolStripMenuItem.Click += new System.EventHandler(this.detailsToolStripMenuItem_Click);
             // 
             // dgvClients
             // 
@@ -77,24 +97,6 @@
             this.dgvClients.Name = "dgvClients";
             this.dgvClients.Size = new System.Drawing.Size(1959, 1133);
             this.dgvClients.TabIndex = 0;
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(40, 40);
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.detailsToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(385, 127);
-            // 
-            // detailsToolStripMenuItem
-            // 
-            this.detailsToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 14.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.detailsToolStripMenuItem.ForeColor = System.Drawing.Color.Teal;
-            this.detailsToolStripMenuItem.Image = global::BankSystem.Properties.Resources.search;
-            this.detailsToolStripMenuItem.Name = "detailsToolStripMenuItem";
-            this.detailsToolStripMenuItem.Size = new System.Drawing.Size(384, 68);
-            this.detailsToolStripMenuItem.Text = "Details";
-            this.detailsToolStripMenuItem.Click += new System.EventHandler(this.detailsToolStripMenuItem_Click);
             // 
             // DealWithClients
             // 

@@ -23,12 +23,12 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.chkAddU = new System.Windows.Forms.CheckBox();
             this.chkTransactions = new System.Windows.Forms.CheckBox();
             this.chkDeleteC = new System.Windows.Forms.CheckBox();
             this.chkShowC = new System.Windows.Forms.CheckBox();
             this.chkFindC = new System.Windows.Forms.CheckBox();
-            this.chkManage = new System.Windows.Forms.CheckBox();
+            this.chkShowU = new System.Windows.Forms.CheckBox();
             this.chkUpdateC = new System.Windows.Forms.CheckBox();
             this.chkAddC = new System.Windows.Forms.CheckBox();
             this.btnUpdateOrSetImage = new System.Windows.Forms.Button();
@@ -36,25 +36,25 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pbUserPic = new System.Windows.Forms.PictureBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
+            this.chkFindU = new System.Windows.Forms.CheckBox();
+            this.chkUpdateU = new System.Windows.Forms.CheckBox();
+            this.chkDeleteU = new System.Windows.Forms.CheckBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.pbUserPic)).BeginInit();
             this.SuspendLayout();
             // 
-            // checkBox1
+            // chkAddU
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.BackColor = System.Drawing.Color.Aqua;
-            this.checkBox1.ForeColor = System.Drawing.Color.Black;
-            this.checkBox1.Location = new System.Drawing.Point(1138, 912);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(179, 36);
-            this.checkBox1.TabIndex = 74;
-            this.checkBox1.Tag = "enAddUser";
-            this.checkBox1.Text = "Add users";
-            this.checkBox1.UseVisualStyleBackColor = false;
+            this.chkAddU.AutoSize = true;
+            this.chkAddU.BackColor = System.Drawing.Color.Aqua;
+            this.chkAddU.ForeColor = System.Drawing.Color.Black;
+            this.chkAddU.Location = new System.Drawing.Point(1138, 912);
+            this.chkAddU.Name = "chkAddU";
+            this.chkAddU.Size = new System.Drawing.Size(165, 36);
+            this.chkAddU.TabIndex = 74;
+            this.chkAddU.Tag = "enAddUser";
+            this.chkAddU.Text = "Add user";
+            this.chkAddU.UseVisualStyleBackColor = false;
             // 
             // chkTransactions
             // 
@@ -108,18 +108,18 @@
             this.chkFindC.Text = "Find client";
             this.chkFindC.UseVisualStyleBackColor = false;
             // 
-            // chkManage
+            // chkShowU
             // 
-            this.chkManage.AutoSize = true;
-            this.chkManage.BackColor = System.Drawing.Color.Aqua;
-            this.chkManage.ForeColor = System.Drawing.Color.Black;
-            this.chkManage.Location = new System.Drawing.Point(906, 912);
-            this.chkManage.Name = "chkManage";
-            this.chkManage.Size = new System.Drawing.Size(199, 36);
-            this.chkManage.TabIndex = 69;
-            this.chkManage.Tag = "enShowUsers";
-            this.chkManage.Text = "Show users";
-            this.chkManage.UseVisualStyleBackColor = false;
+            this.chkShowU.AutoSize = true;
+            this.chkShowU.BackColor = System.Drawing.Color.Aqua;
+            this.chkShowU.ForeColor = System.Drawing.Color.Black;
+            this.chkShowU.Location = new System.Drawing.Point(906, 912);
+            this.chkShowU.Name = "chkShowU";
+            this.chkShowU.Size = new System.Drawing.Size(199, 36);
+            this.chkShowU.TabIndex = 69;
+            this.chkShowU.Tag = "enShowUsers";
+            this.chkShowU.Text = "Show users";
+            this.chkShowU.UseVisualStyleBackColor = false;
             // 
             // chkUpdateC
             // 
@@ -204,44 +204,44 @@
             this.pbUserPic.TabIndex = 62;
             this.pbUserPic.TabStop = false;
             // 
-            // checkBox2
+            // chkFindU
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.BackColor = System.Drawing.Color.Aqua;
-            this.checkBox2.ForeColor = System.Drawing.Color.Black;
-            this.checkBox2.Location = new System.Drawing.Point(1384, 912);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(179, 36);
-            this.checkBox2.TabIndex = 75;
-            this.checkBox2.Tag = "enAddUser";
-            this.checkBox2.Text = "Add users";
-            this.checkBox2.UseVisualStyleBackColor = false;
+            this.chkFindU.AutoSize = true;
+            this.chkFindU.BackColor = System.Drawing.Color.Aqua;
+            this.chkFindU.ForeColor = System.Drawing.Color.Black;
+            this.chkFindU.Location = new System.Drawing.Point(1384, 912);
+            this.chkFindU.Name = "chkFindU";
+            this.chkFindU.Size = new System.Drawing.Size(170, 36);
+            this.chkFindU.TabIndex = 75;
+            this.chkFindU.Tag = "enFindUser";
+            this.chkFindU.Text = "Find user";
+            this.chkFindU.UseVisualStyleBackColor = false;
             // 
-            // checkBox3
+            // chkUpdateU
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.BackColor = System.Drawing.Color.Aqua;
-            this.checkBox3.ForeColor = System.Drawing.Color.Black;
-            this.checkBox3.Location = new System.Drawing.Point(906, 1037);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(179, 36);
-            this.checkBox3.TabIndex = 76;
-            this.checkBox3.Tag = "enAddUser";
-            this.checkBox3.Text = "Add users";
-            this.checkBox3.UseVisualStyleBackColor = false;
+            this.chkUpdateU.AutoSize = true;
+            this.chkUpdateU.BackColor = System.Drawing.Color.Aqua;
+            this.chkUpdateU.ForeColor = System.Drawing.Color.Black;
+            this.chkUpdateU.Location = new System.Drawing.Point(906, 1037);
+            this.chkUpdateU.Name = "chkUpdateU";
+            this.chkUpdateU.Size = new System.Drawing.Size(206, 36);
+            this.chkUpdateU.TabIndex = 76;
+            this.chkUpdateU.Tag = "enUpdateUser";
+            this.chkUpdateU.Text = "Update user";
+            this.chkUpdateU.UseVisualStyleBackColor = false;
             // 
-            // checkBox4
+            // chkDeleteU
             // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.BackColor = System.Drawing.Color.Aqua;
-            this.checkBox4.ForeColor = System.Drawing.Color.Black;
-            this.checkBox4.Location = new System.Drawing.Point(1138, 1037);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(179, 36);
-            this.checkBox4.TabIndex = 77;
-            this.checkBox4.Tag = "enAddUser";
-            this.checkBox4.Text = "Add users";
-            this.checkBox4.UseVisualStyleBackColor = false;
+            this.chkDeleteU.AutoSize = true;
+            this.chkDeleteU.BackColor = System.Drawing.Color.Aqua;
+            this.chkDeleteU.ForeColor = System.Drawing.Color.Black;
+            this.chkDeleteU.Location = new System.Drawing.Point(1138, 1037);
+            this.chkDeleteU.Name = "chkDeleteU";
+            this.chkDeleteU.Size = new System.Drawing.Size(197, 36);
+            this.chkDeleteU.TabIndex = 77;
+            this.chkDeleteU.Tag = "enDeleteUser";
+            this.chkDeleteU.Text = "Delete user";
+            this.chkDeleteU.UseVisualStyleBackColor = false;
             // 
             // openFileDialog1
             // 
@@ -253,15 +253,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::BankSystem.Properties.Resources.profile;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Controls.Add(this.checkBox4);
-            this.Controls.Add(this.checkBox3);
-            this.Controls.Add(this.checkBox2);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.chkDeleteU);
+            this.Controls.Add(this.chkUpdateU);
+            this.Controls.Add(this.chkFindU);
+            this.Controls.Add(this.chkAddU);
             this.Controls.Add(this.chkTransactions);
             this.Controls.Add(this.chkDeleteC);
             this.Controls.Add(this.chkShowC);
             this.Controls.Add(this.chkFindC);
-            this.Controls.Add(this.chkManage);
+            this.Controls.Add(this.chkShowU);
             this.Controls.Add(this.chkUpdateC);
             this.Controls.Add(this.chkAddC);
             this.Controls.Add(this.btnUpdateOrSetImage);
@@ -280,12 +280,12 @@
 
         #endregion
 
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox chkAddU;
         private System.Windows.Forms.CheckBox chkTransactions;
         private System.Windows.Forms.CheckBox chkDeleteC;
         private System.Windows.Forms.CheckBox chkShowC;
         private System.Windows.Forms.CheckBox chkFindC;
-        private System.Windows.Forms.CheckBox chkManage;
+        private System.Windows.Forms.CheckBox chkShowU;
         private System.Windows.Forms.CheckBox chkUpdateC;
         private System.Windows.Forms.CheckBox chkAddC;
         private System.Windows.Forms.Button btnUpdateOrSetImage;
@@ -293,9 +293,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pbUserPic;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox4;
+        private System.Windows.Forms.CheckBox chkFindU;
+        private System.Windows.Forms.CheckBox chkUpdateU;
+        private System.Windows.Forms.CheckBox chkDeleteU;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }

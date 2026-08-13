@@ -38,7 +38,7 @@
             this.btnChange.BackColor = System.Drawing.Color.Teal;
             this.btnChange.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChange.ForeColor = System.Drawing.Color.Cyan;
-            this.btnChange.Location = new System.Drawing.Point(1321, 964);
+            this.btnChange.Location = new System.Drawing.Point(1343, 961);
             this.btnChange.Name = "btnChange";
             this.btnChange.Size = new System.Drawing.Size(250, 106);
             this.btnChange.TabIndex = 11;
@@ -51,6 +51,7 @@
             // 
             this.txtOld.Location = new System.Drawing.Point(1172, 1118);
             this.txtOld.Name = "txtOld";
+            this.txtOld.PasswordChar = '*';
             this.txtOld.Size = new System.Drawing.Size(377, 38);
             this.txtOld.TabIndex = 12;
             this.txtOld.Visible = false;
@@ -59,6 +60,7 @@
             // 
             this.txtNew.Location = new System.Drawing.Point(1172, 1204);
             this.txtNew.Name = "txtNew";
+            this.txtNew.PasswordChar = '*';
             this.txtNew.Size = new System.Drawing.Size(377, 38);
             this.txtNew.TabIndex = 13;
             this.txtNew.Visible = false;
@@ -101,7 +103,7 @@
             // linklblChangePass
             // 
             this.linklblChangePass.AutoSize = true;
-            this.linklblChangePass.Location = new System.Drawing.Point(1315, 1005);
+            this.linklblChangePass.Location = new System.Drawing.Point(1113, 1118);
             this.linklblChangePass.Name = "linklblChangePass";
             this.linklblChangePass.Size = new System.Drawing.Size(258, 32);
             this.linklblChangePass.TabIndex = 66;

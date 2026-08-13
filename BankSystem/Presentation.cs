@@ -11,12 +11,62 @@ using BankBusiness;
 namespace BankSystem {
     public enum entransactionMode { deposit = 0, withdraw = 1, none = 2 }
     public enum enProcessesPermissions { enAddClient = 1, enShowClient = 2, enFindClient = 4, enUpdateClient = 8,
-    enDeleteClient = 16, enTransactions = 32, enShowUsers = 64, enAddUser = 128}
-
+    enDeleteClient = 16, enTransactions = 32, enShowUsers = 64, enAddUser = 128, enFindUser = 256, enUpdateUser = 512, 
+        enDeleteUser = 1024}
+  
     public partial class Presentation : Form {
         private Users currentUser = new Users();
+        DealWithClients dealWithClients = new DealWithClients();
+        void setButtonsVisiblityByPermission() {
+            if (currentUser == null)
+                return;
+            foreach (Control control in this.Controls) {
+                if (control is Button btn) {
+                    if (btn.Tag != null) {
+                        int processPermission = GeneralMethods.convertTagEnumToInt(btn.Tag.ToString());
+                        if ((currentUser.permissionNum & processPermission) == processPermission) {
+                            btn.Enabled = true;
+                            // we must make the update or delete button in find client form visible also
+                            if (processPermission == 8 || processPermission == 16)
+                                dealWithClients.EnableButtons(processPermission);
+                        }
+                    }
+                }
+            }
+        }
 
-        FrmManageUsersMenu userMenu = new FrmManageUsersMenu();
+        void setVisiblityToItemChildren(ToolStripMenuItem MenuItem) {
+            // at first, we check the main item permission in the menuStrip before we check its children
+            if (MenuItem.Tag != null) {
+                int processPermission = GeneralMethods.convertTagEnumToInt(MenuItem.Tag.ToString());
+                if ((currentUser.permissionNum & processPermission) == processPermission)
+                    MenuItem.Enabled = true;
+            }
+            foreach (ToolStripItem children in MenuItem.DropDownItems) {
+                if (children is ToolStripMenuItem child) {
+                    int processPermission = GeneralMethods.convertTagEnumToInt(child.Tag.ToString());
+                    if((currentUser.permissionNum & processPermission) == processPermission) {
+                        child.Enabled = true;
+                    }
+                }
+            }
+        }
+
+        void setMenuStripVisiblityByPermission() {
+            if (currentUser == null)
+                return;
+           foreach (ToolStripItem item in menuStrip1.Items) {
+                 if (item is ToolStripMenuItem Item) {
+                    setVisiblityToItemChildren(Item);
+                 }
+           }
+        }
+
+        private void Presentation_Load(object sender, EventArgs e) {
+            lblUsername.Text = currentUser.username;
+            setButtonsVisiblityByPermission();
+            setMenuStripVisiblityByPermission();
+        }
         public Presentation() {
             InitializeComponent();
         }
@@ -31,7 +81,6 @@ namespace BankSystem {
 
         private void AlterClientClick(object sender, EventArgs e) {
             Button btn = (Button)sender;
-            DealWithClients dealWithClients = new DealWithClients();
             dealWithClients.setProcess(btn.Text);
             dealWithClients.ShowDialog();
         }
@@ -64,8 +113,9 @@ namespace BankSystem {
         }
 
         private void btnClose_Click(object sender, EventArgs e) {
-            this.Close();
-            Application.Exit();
+            this.Hide();
+            FrmLogin frm = new FrmLogin();
+            frm.ShowDialog();
         }
 
         private void btnTransactions_Click(object sender, EventArgs e) {
@@ -94,13 +144,14 @@ namespace BankSystem {
 
         }
 
-        private void Presentation_Load(object sender, EventArgs e) {
-            lblUsername.Text = currentUser.username;
-        }
 
         private void profileToolStripMenuItem_Click(object sender, EventArgs e) {
             FrmUserProfile Frm = new FrmUserProfile(currentUser);
             Frm.ShowDialog();
+        }
+
+        private void addUserToolStripMenuItem_Click(object sender, EventArgs e) {
+
         }
     }
 }

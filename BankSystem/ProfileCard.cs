@@ -35,7 +35,7 @@ namespace BankSystem {
             if (user == null) return; 
             foreach (Control ctrl in this.Controls) {
                 if (ctrl is CheckBox box) {
-                    int processPermission = convertTagEnumToInt(box.Tag.ToString());
+                    int processPermission = GeneralMethods.convertTagEnumToInt(box.Tag.ToString());
                     if ((user.permissionNum & processPermission) == processPermission) {
                         box.Checked = true;
                     }

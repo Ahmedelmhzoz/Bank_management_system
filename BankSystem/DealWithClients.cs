@@ -30,6 +30,15 @@ namespace BankSystem {
             }
         }
 
+        public void EnableButtons(int buttonPermission) {
+            if (buttonPermission == 8) {
+                btnUpdateClient.Enabled = true;
+            }
+            else if (buttonPermission == 16) {
+                 btnDeleteClient.Enabled = true;
+            }
+        }
+
         public void setProcess(string ProcessName) {
             lblProcess.Text = ProcessName;
         }
@@ -51,5 +60,6 @@ namespace BankSystem {
             FrmClientDetails details = new FrmClientDetails(client);
             details.ShowDialog();
         }
+
     }
 }
