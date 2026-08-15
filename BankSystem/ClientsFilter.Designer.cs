@@ -25,8 +25,8 @@
         private void InitializeComponent() {
             this.dgvFilteredClients = new BankSystem.dgvClients();
             this.label1 = new System.Windows.Forms.Label();
-            this.cbSearchCategories = new System.Windows.Forms.ComboBox();
             this.txtSearch = new System.Windows.Forms.TextBox();
+            this.cbSearchCategories = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // dgvFilteredClients
@@ -48,6 +48,14 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Filter By:";
             // 
+            // txtSearch
+            // 
+            this.txtSearch.Location = new System.Drawing.Point(705, 99);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(357, 38);
+            this.txtSearch.TabIndex = 4;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
+            // 
             // cbSearchCategories
             // 
             this.cbSearchCategories.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -63,14 +71,6 @@
             this.cbSearchCategories.Size = new System.Drawing.Size(368, 46);
             this.cbSearchCategories.TabIndex = 3;
             this.cbSearchCategories.SelectedIndexChanged += new System.EventHandler(this.cbSearchCategories_SelectedIndexChanged);
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.Location = new System.Drawing.Point(705, 99);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(357, 38);
-            this.txtSearch.TabIndex = 4;
-            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // ClientsFilter
             // 
@@ -93,7 +93,7 @@
 
         private dgvClients dgvFilteredClients;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cbSearchCategories;
         private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.ComboBox cbSearchCategories;
     }
 }

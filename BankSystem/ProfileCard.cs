@@ -18,18 +18,9 @@ namespace BankSystem {
             }
             else {
                 pbUserPic.Visible = false;
-                btnUpdateOrSetImage.Text = "Set image";
             }
             lblUsername.Text = user.username;
             updateCheckBoxes();
-        }
-        int convertTagEnumToInt(string permissionEnumInString) {
-            if (Enum.TryParse(permissionEnumInString, out enProcessesPermissions permission)) {
-                return (int)permission;
-            }
-            else {
-                return 0;
-            }
         }
         void updateCheckBoxes() {
             if (user == null) return; 
@@ -46,24 +37,15 @@ namespace BankSystem {
                 }
             }
         }
-        private void ucUserProfile_Load(object sender, EventArgs e) {
-           
-        }
-
-        private void btnUpdateOrSetImage_Click(object sender, EventArgs e) {
-            openFileDialog1.InitialDirectory = @"C:\";
-            openFileDialog1.Title = "Choose image";
-            openFileDialog1.DefaultExt = "png";
-            openFileDialog1.Filter = "PNG File (*.png)|*.png";
-            if (openFileDialog1.ShowDialog() == DialogResult.OK) { 
-                pbUserPic.Image = Image.FromFile(openFileDialog1.FileName);
-                pbUserPic.SizeMode = PictureBoxSizeMode.Zoom;
-                user.imagePath = openFileDialog1.FileName.ToString();
-                if (!user.Save()) {
-                    MessageBox.Show("Error happend");
-                } else {
-                    pbUserPic.Visible = true;
-                }
+        public void putImage(string path) {
+            pbUserPic.Image = Image.FromFile(path);
+            pbUserPic.SizeMode = PictureBoxSizeMode.Zoom;
+            user.imagePath = path;
+            if (!user.Save()) {
+                MessageBox.Show("Error happend");
+            }
+            else {
+                pbUserPic.Visible = true;
             }
         }
     }

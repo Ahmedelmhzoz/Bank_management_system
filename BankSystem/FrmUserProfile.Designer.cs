@@ -31,6 +31,8 @@
             this.lblNEw = new System.Windows.Forms.Label();
             this.profileCard1 = new BankSystem.ProfileCard();
             this.linklblChangePass = new System.Windows.Forms.LinkLabel();
+            this.btnUpdateOrSetImage = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.SuspendLayout();
             // 
             // btnChange
@@ -111,12 +113,30 @@
             this.linklblChangePass.Text = "Change password?";
             this.linklblChangePass.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linklblChangePass_LinkClicked);
             // 
+            // btnUpdateOrSetImage
+            // 
+            this.btnUpdateOrSetImage.BackColor = System.Drawing.Color.Teal;
+            this.btnUpdateOrSetImage.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdateOrSetImage.ForeColor = System.Drawing.Color.Cyan;
+            this.btnUpdateOrSetImage.Location = new System.Drawing.Point(1392, 147);
+            this.btnUpdateOrSetImage.Name = "btnUpdateOrSetImage";
+            this.btnUpdateOrSetImage.Size = new System.Drawing.Size(171, 140);
+            this.btnUpdateOrSetImage.TabIndex = 67;
+            this.btnUpdateOrSetImage.Text = "Update image";
+            this.btnUpdateOrSetImage.UseVisualStyleBackColor = false;
+            this.btnUpdateOrSetImage.Click += new System.EventHandler(this.btnUpdateOrSetImage_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
             // FrmUserProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1615, 1280);
+            this.Controls.Add(this.btnUpdateOrSetImage);
             this.Controls.Add(this.linklblChangePass);
             this.Controls.Add(this.lblNEw);
             this.Controls.Add(this.lblOld);
@@ -142,5 +162,7 @@
         private System.Windows.Forms.Label lblOld;
         private System.Windows.Forms.Label lblNEw;
         private System.Windows.Forms.LinkLabel linklblChangePass;
+        private System.Windows.Forms.Button btnUpdateOrSetImage;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }
