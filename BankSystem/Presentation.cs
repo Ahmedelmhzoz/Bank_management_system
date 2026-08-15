@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using BankBusiness;
 namespace BankSystem {
@@ -17,21 +10,26 @@ namespace BankSystem {
     public partial class Presentation : Form {
         private Users currentUser = new Users();
         DealWithClients dealWithClients = new DealWithClients();
+
+        FrmDealWithUsers frmDealWithUsers = null;
         void setButtonsVisiblityByPermission() {
             if (currentUser == null)
                 return;
-            foreach (Control control in this.Controls) {
-                if (control is Button btn) {
-                    if (btn.Tag != null) {
-                        int processPermission = GeneralMethods.convertTagEnumToInt(btn.Tag.ToString());
-                        if ((currentUser.permissionNum & processPermission) == processPermission) {
-                            btn.Enabled = true;
-                            // we must make the update or delete button in find client form visible also
-                            if (processPermission == 8 || processPermission == 16)
-                                dealWithClients.EnableButtons(processPermission);
-                        }
-                    }
-                }
+            GeneralMethods.setButtonsVisiblityByPermission(this.Controls, currentUser.permissionNum);
+            if ((currentUser.permissionNum & 8) == 8) {
+                dealWithClients.EnableButtons(8); // it will enable the update button in the update clinets form
+                                                  // if the user has the permission
+            }
+            if ((currentUser.permissionNum & 16) == 16) {
+                dealWithClients.EnableButtons(16); // it will enable the delete button in the delete clinets form
+            }
+            frmDealWithUsers = new FrmDealWithUsers(currentUser);
+            if ((currentUser.permissionNum & 512) == 512) {
+                frmDealWithUsers.EnableButtons(512); // it will enable the update button in the update Users form
+                                                  // if the user has the permission
+            }
+            if ((currentUser.permissionNum & 1024) == 1024) {
+                frmDealWithUsers.EnableButtons(1024); // it will enable the delete button in the delete Users form
             }
         }
 
@@ -41,6 +39,7 @@ namespace BankSystem {
                 int processPermission = GeneralMethods.convertTagEnumToInt(MenuItem.Tag.ToString());
                 if ((currentUser.permissionNum & processPermission) == processPermission)
                     MenuItem.Enabled = true;
+                return;
             }
             foreach (ToolStripItem children in MenuItem.DropDownItems) {
                 if (children is ToolStripMenuItem child) {
@@ -82,11 +81,6 @@ namespace BankSystem {
         private void AlterClientClick(object sender, EventArgs e) {
             Button btn = (Button)sender;
             dealWithClients.setProcess(btn.Text);
-            dealWithClients.ShowDialog();
-        }
-
-        private void findClientToolStripMenuItem_Click(object sender, EventArgs e) {
-            DealWithClients dealWithClients = new DealWithClients();
             dealWithClients.ShowDialog();
         }
 
@@ -141,17 +135,41 @@ namespace BankSystem {
         }
 
         private void btnManageUsers_Click(object sender, EventArgs e) {
-
+            FrmManageUsersMenu frm = new FrmManageUsersMenu(currentUser, frmDealWithUsers);
+            frm.ShowDialog();
         }
 
 
         private void profileToolStripMenuItem_Click(object sender, EventArgs e) {
-            FrmUserProfile Frm = new FrmUserProfile(currentUser);
+            FrmUserProfile frm = new FrmUserProfile(currentUser);
+            frm.ShowDialog();
+        }
+
+
+
+        private void updateUserToolStripMenuItem_Click(object sender, EventArgs e) {
+            frmDealWithUsers.setProcess("Update user:");
+            frmDealWithUsers.ShowDialog();
+        }
+
+        private void addUserToolStripMenuItem1_Click(object sender, EventArgs e) {
+            FrmUserProcess Frm = new FrmUserProcess();
             Frm.ShowDialog();
         }
 
-        private void addUserToolStripMenuItem_Click(object sender, EventArgs e) {
+        private void findUserToolStripMenuItem_Click(object sender, EventArgs e) {
+            frmDealWithUsers.setProcess("Find user:");
+            frmDealWithUsers.ShowDialog();
+        }
 
+        private void deleteUserToolStripMenuItem_Click(object sender, EventArgs e) {
+            frmDealWithUsers.setProcess("Delete user:");
+            frmDealWithUsers.ShowDialog();
+        }
+
+        private void showUserToolStripMenuItem_Click(object sender, EventArgs e) {
+            FrmUsersList frm = new FrmUsersList();
+            frm.ShowDialog();
         }
     }
 }

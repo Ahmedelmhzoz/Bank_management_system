@@ -188,18 +188,18 @@ namespace BankData
             return isUpdated;
         }
 
-        public static bool findUser(string username, string pass, ref int permission, ref string imagePath) {
+        public static bool findUser(string username, ref string pass, ref int permission, ref string imagePath) {
             bool isFound = false;
             SqlConnection conn = new SqlConnection(connectionSettings);
-            string query = "select * from Users where username = @U and password = @P";
+            string query = "select * from Users where username = @U";
             SqlCommand cmd = new SqlCommand(query, conn);
             cmd.Parameters.AddWithValue("@U", username);
-            cmd.Parameters.AddWithValue("@P", pass);
             try {
                 conn.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
                 if (reader.Read()) {
                     isFound = true;
+                    pass = reader[1].ToString();
                     permission = Convert.ToInt32(reader[2]);
                     imagePath = (reader[3] != DBNull.Value ? reader[3].ToString() : "");
                 }
@@ -285,6 +285,74 @@ namespace BankData
                 conn.Close();
             }
             return updated;
+        }
+
+        public static DataTable searchResultByUsername(string currentText) {
+            DataTable dt = new DataTable();
+            SqlConnection conn = new SqlConnection(connectionSettings);
+            string query = "Select * from Users where username Like @CurrentText + '%'";
+            SqlCommand cmd = new SqlCommand(query, conn);
+            cmd.Parameters.AddWithValue("@CurrentText", currentText);
+            try {
+                conn.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                if (reader.HasRows) {
+                    dt.Load(reader);
+                }
+                reader.Close();
+
+            }
+            catch (Exception ex) {
+                Console.WriteLine(ex.Message);
+            }
+            finally {
+                conn.Close();
+            }
+            return dt;
+        }
+
+        public static DataTable getUsers() {
+            DataTable dt = new DataTable();
+            SqlConnection conn = new SqlConnection(connectionSettings);
+            string query = "Select * from Users";
+            SqlCommand cmd = new SqlCommand(query, conn);
+            try {
+                conn.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                if (reader.HasRows) {
+                    dt.Load(reader);
+                }
+                reader.Close();
+
+            }
+            catch (Exception ex) {
+                Console.WriteLine(ex.Message);
+            }
+            finally {
+                conn.Close();
+            }
+            return dt;
+        }
+        public static bool deleteAUser(string username) {
+            bool isDeleted = false;
+            SqlConnection conn = new SqlConnection(connectionSettings);
+            string query = "delete from Users where username = @U";
+            SqlCommand cmd = new SqlCommand(query, conn);
+            cmd.Parameters.AddWithValue("@U", username);
+            try {
+                conn.Open();
+                int affectedRows = cmd.ExecuteNonQuery();
+                if (affectedRows > 0) {
+                    isDeleted = true;
+                }
+            }
+            catch (Exception ex) {
+                Console.WriteLine(ex.Message);
+            }
+            finally {
+                conn.Close();
+            }
+            return isDeleted;
         }
     }
 }

@@ -98,12 +98,12 @@ namespace BankBusiness
             imagePath = "";
             permissionNum  = -2;
         }
-        public bool findUserAndGetData(string Username, string Password) {
-            string imgPath = "";
+        public bool findUserAndGetData(string Username) {
+            string imgPath = "", pass = "";
             int Permission = -2;
-            if (DataAccess.findUser(Username, Password, ref Permission, ref imgPath)) {
+            if (DataAccess.findUser(Username, ref pass, ref Permission, ref imgPath)) {
                 username = Username;
-                password = Password;
+                password = pass;
                 imagePath = imgPath;
                 permissionNum = Permission;
                 currentMode = enUserMode.updateUser;
@@ -125,6 +125,7 @@ namespace BankBusiness
         bool updateAUser() {
             return DataAccess.updateUser(username, password, permissionNum, imagePath);
         }
+
         public bool Save() {
             switch (currentMode) {
                 case enUserMode.addUser:
@@ -136,6 +137,16 @@ namespace BankBusiness
                 case enUserMode.updateUser: return updateAUser();
                 default: return false;
             }
+        }
+
+        public static DataTable getCurrentSearchResult(string currentTxt) {
+            return DataAccess.searchResultByUsername(currentTxt);
+        }
+        public static DataTable getAllUsers() {
+            return DataAccess.getUsers();
+        }
+        public static bool deleteUser(string username) {
+            return DataAccess.deleteAUser(username);
         }
     }
 }

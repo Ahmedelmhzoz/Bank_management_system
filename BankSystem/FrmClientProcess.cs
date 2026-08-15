@@ -15,6 +15,7 @@ namespace BankSystem {
             InitializeComponent();
         }
 
+        public Clients client = new Clients();
         public FrmClientProcess(string process) {
             InitializeComponent();
             lblProcess.Text = process;
@@ -32,8 +33,6 @@ namespace BankSystem {
                 txtAccNumber.Focus();
             }
         }
-
-        public Clients client = new Clients();
         private void validatingTextBoxes(object sender, CancelEventArgs e) {
             TextBox txtBox = (TextBox)sender;
             if (txtBox.Tag.ToString() == "PinCode") 

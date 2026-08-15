@@ -19,21 +19,26 @@ namespace BankSystem {
                 return;
             }
             Users user = new Users();
-            if (user.findUserAndGetData(txtUsername.Text, txtPassword.Text)) {
-                MessageBox.Show($"Welcome, {user.username} (-:", "Process done Successfully", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Presentation Frm = new Presentation(user);
-                this.Hide();
-                Frm.ShowDialog();
-                this.Close();
+            if (user.findUserAndGetData(txtUsername.Text)) {
+                if (txtPassword.Text == user.password) {
+                    MessageBox.Show($"Welcome, {user.username} (-:", "Process done Successfully", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Presentation Frm = new Presentation(user);
+                    this.Hide();
+                    Frm.ShowDialog();
+                    this.Close();
+                    return;
+                }
             }
-            else {
-                string message = "Wrong Password or Username" + Environment.NewLine + "Please enter user data correctly";
-                ErrorMessage(message);
-            }
+            string message = "Wrong Password or Username" + Environment.NewLine + "Please enter user data correctly";
+            ErrorMessage(message);
         }
         void registerProcess() {
             if (txtConfirmPass.Text == "" || txtPassword.Text == "" || txtUsername.Text == "") {
                 ErrorMessage("Please fill all text boxes");
+                return;
+            }
+            if (txtConfirmPass.Text != txtPassword.Text) {
+                ErrorMessage("The text in confirmation fild not the same as the password fild");
                 return;
             }
             if (Users.isUsernameTaken(txtUsername.Text)) {

@@ -31,7 +31,6 @@
             this.chkShowU = new System.Windows.Forms.CheckBox();
             this.chkUpdateC = new System.Windows.Forms.CheckBox();
             this.chkAddC = new System.Windows.Forms.CheckBox();
-            this.btnUpdateOrSetImage = new System.Windows.Forms.Button();
             this.lblUsername = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -147,19 +146,6 @@
             this.chkAddC.Text = "Add client";
             this.chkAddC.UseVisualStyleBackColor = false;
             // 
-            // btnUpdateOrSetImage
-            // 
-            this.btnUpdateOrSetImage.BackColor = System.Drawing.Color.Teal;
-            this.btnUpdateOrSetImage.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdateOrSetImage.ForeColor = System.Drawing.Color.Cyan;
-            this.btnUpdateOrSetImage.Location = new System.Drawing.Point(1403, 189);
-            this.btnUpdateOrSetImage.Name = "btnUpdateOrSetImage";
-            this.btnUpdateOrSetImage.Size = new System.Drawing.Size(171, 140);
-            this.btnUpdateOrSetImage.TabIndex = 66;
-            this.btnUpdateOrSetImage.Text = "Update image";
-            this.btnUpdateOrSetImage.UseVisualStyleBackColor = false;
-            this.btnUpdateOrSetImage.Click += new System.EventHandler(this.btnUpdateOrSetImage_Click);
-            // 
             // lblUsername
             // 
             this.lblUsername.AutoSize = true;
@@ -264,7 +250,6 @@
             this.Controls.Add(this.chkShowU);
             this.Controls.Add(this.chkUpdateC);
             this.Controls.Add(this.chkAddC);
-            this.Controls.Add(this.btnUpdateOrSetImage);
             this.Controls.Add(this.lblUsername);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -288,7 +273,6 @@
         private System.Windows.Forms.CheckBox chkShowU;
         private System.Windows.Forms.CheckBox chkUpdateC;
         private System.Windows.Forms.CheckBox chkAddC;
-        private System.Windows.Forms.Button btnUpdateOrSetImage;
         private System.Windows.Forms.Label lblUsername;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;

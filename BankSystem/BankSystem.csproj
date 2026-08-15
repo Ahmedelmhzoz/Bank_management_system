@@ -87,6 +87,12 @@
     <Compile Include="FrmClientProcess.Designer.cs">
       <DependentUpon>FrmClientProcess.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmDealWithUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDealWithUsers.Designer.cs">
+      <DependentUpon>FrmDealWithUsers.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,11 +123,29 @@
     <Compile Include="FrmTransactions.Designer.cs">
       <DependentUpon>FrmTransactions.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmUserDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmUserDetails.Designer.cs">
+      <DependentUpon>FrmUserDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmUserProcess.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmUserProcess.Designer.cs">
+      <DependentUpon>FrmUserProcess.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmUserProfile.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmUserProfile.Designer.cs">
       <DependentUpon>FrmUserProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmUsersList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmUsersList.Designer.cs">
+      <DependentUpon>FrmUsersList.cs</DependentUpon>
     </Compile>
     <Compile Include="GeneralMethods.cs" />
     <Compile Include="PersonCard.cs">
@@ -144,6 +168,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ucUsersList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucUsersList.Designer.cs">
+      <DependentUpon>ucUsersList.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="ClientsFilter.resx">
       <DependentUpon>ClientsFilter.cs</DependentUpon>
     </EmbeddedResource>
@@ -162,8 +192,14 @@
     <EmbeddedResource Include="FrmClientProcess.resx">
       <DependentUpon>FrmClientProcess.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmDealWithUsers.resx">
+      <DependentUpon>FrmDealWithUsers.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmManageUsersMenu.resx">
+      <DependentUpon>FrmManageUsersMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmTotalBalances.resx">
       <DependentUpon>FrmTotalBalances.cs</DependentUpon>
@@ -174,8 +210,17 @@
     <EmbeddedResource Include="FrmTransactions.resx">
       <DependentUpon>FrmTransactions.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmUserDetails.resx">
+      <DependentUpon>FrmUserDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmUserProcess.resx">
+      <DependentUpon>FrmUserProcess.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmUserProfile.resx">
       <DependentUpon>FrmUserProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmUsersList.resx">
+      <DependentUpon>FrmUsersList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PersonCard.resx">
       <DependentUpon>PersonCard.cs</DependentUpon>
@@ -190,6 +235,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucUsersList.resx">
+      <DependentUpon>ucUsersList.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.manifest" />
     <None Include="Properties\Settings.settings">

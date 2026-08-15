@@ -35,7 +35,7 @@
             this.withdrawToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.totalBalancesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manageUsersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.showUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addUserToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.findUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -134,7 +134,6 @@
             // 
             // depositToolStripMenuItem
             // 
-            this.depositToolStripMenuItem.Enabled = false;
             this.depositToolStripMenuItem.ForeColor = System.Drawing.Color.Teal;
             this.depositToolStripMenuItem.Name = "depositToolStripMenuItem";
             this.depositToolStripMenuItem.Size = new System.Drawing.Size(514, 70);
@@ -144,7 +143,6 @@
             // 
             // withdrawToolStripMenuItem
             // 
-            this.withdrawToolStripMenuItem.Enabled = false;
             this.withdrawToolStripMenuItem.ForeColor = System.Drawing.Color.Teal;
             this.withdrawToolStripMenuItem.Name = "withdrawToolStripMenuItem";
             this.withdrawToolStripMenuItem.Size = new System.Drawing.Size(514, 70);
@@ -154,7 +152,6 @@
             // 
             // totalBalancesToolStripMenuItem
             // 
-            this.totalBalancesToolStripMenuItem.Enabled = false;
             this.totalBalancesToolStripMenuItem.ForeColor = System.Drawing.Color.Teal;
             this.totalBalancesToolStripMenuItem.Name = "totalBalancesToolStripMenuItem";
             this.totalBalancesToolStripMenuItem.Size = new System.Drawing.Size(514, 70);
@@ -166,7 +163,7 @@
             // 
             this.manageUsersToolStripMenuItem.BackColor = System.Drawing.Color.Teal;
             this.manageUsersToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addUserToolStripMenuItem,
+            this.showUserToolStripMenuItem,
             this.addUserToolStripMenuItem1,
             this.findUserToolStripMenuItem,
             this.updateUserToolStripMenuItem,
@@ -178,16 +175,16 @@
             this.manageUsersToolStripMenuItem.Size = new System.Drawing.Size(395, 66);
             this.manageUsersToolStripMenuItem.Text = "Manage users";
             // 
-            // addUserToolStripMenuItem
+            // showUserToolStripMenuItem
             // 
-            this.addUserToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
-            this.addUserToolStripMenuItem.Enabled = false;
-            this.addUserToolStripMenuItem.ForeColor = System.Drawing.Color.Teal;
-            this.addUserToolStripMenuItem.Name = "addUserToolStripMenuItem";
-            this.addUserToolStripMenuItem.Size = new System.Drawing.Size(468, 70);
-            this.addUserToolStripMenuItem.Tag = "enShowUsers";
-            this.addUserToolStripMenuItem.Text = "Show users";
-            this.addUserToolStripMenuItem.Click += new System.EventHandler(this.addUserToolStripMenuItem_Click);
+            this.showUserToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
+            this.showUserToolStripMenuItem.Enabled = false;
+            this.showUserToolStripMenuItem.ForeColor = System.Drawing.Color.Teal;
+            this.showUserToolStripMenuItem.Name = "showUserToolStripMenuItem";
+            this.showUserToolStripMenuItem.Size = new System.Drawing.Size(468, 70);
+            this.showUserToolStripMenuItem.Tag = "enShowUsers";
+            this.showUserToolStripMenuItem.Text = "Show users";
+            this.showUserToolStripMenuItem.Click += new System.EventHandler(this.showUserToolStripMenuItem_Click);
             // 
             // addUserToolStripMenuItem1
             // 
@@ -197,6 +194,7 @@
             this.addUserToolStripMenuItem1.Size = new System.Drawing.Size(468, 70);
             this.addUserToolStripMenuItem1.Tag = "enAddUser";
             this.addUserToolStripMenuItem1.Text = "Add user";
+            this.addUserToolStripMenuItem1.Click += new System.EventHandler(this.addUserToolStripMenuItem1_Click);
             // 
             // findUserToolStripMenuItem
             // 
@@ -206,6 +204,7 @@
             this.findUserToolStripMenuItem.Size = new System.Drawing.Size(468, 70);
             this.findUserToolStripMenuItem.Tag = "enFindUser";
             this.findUserToolStripMenuItem.Text = "Find user";
+            this.findUserToolStripMenuItem.Click += new System.EventHandler(this.findUserToolStripMenuItem_Click);
             // 
             // updateUserToolStripMenuItem
             // 
@@ -215,6 +214,7 @@
             this.updateUserToolStripMenuItem.Size = new System.Drawing.Size(468, 70);
             this.updateUserToolStripMenuItem.Tag = "enUpdateUser";
             this.updateUserToolStripMenuItem.Text = "Update user";
+            this.updateUserToolStripMenuItem.Click += new System.EventHandler(this.updateUserToolStripMenuItem_Click);
             // 
             // deleteUserToolStripMenuItem
             // 
@@ -224,6 +224,7 @@
             this.deleteUserToolStripMenuItem.Size = new System.Drawing.Size(468, 70);
             this.deleteUserToolStripMenuItem.Tag = "enDeleteUser";
             this.deleteUserToolStripMenuItem.Text = "Delete user";
+            this.deleteUserToolStripMenuItem.Click += new System.EventHandler(this.deleteUserToolStripMenuItem_Click);
             // 
             // profileToolStripMenuItem
             // 
@@ -270,9 +271,9 @@
             this.label2.ForeColor = System.Drawing.Color.Teal;
             this.label2.Location = new System.Drawing.Point(777, 330);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(467, 69);
+            this.label2.Size = new System.Drawing.Size(474, 69);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Fast processes:";
+            this.label2.Text = "Fast operations:";
             // 
             // btnFindClient
             // 
@@ -352,14 +353,13 @@
             // btnManageUsers
             // 
             this.btnManageUsers.BackColor = System.Drawing.Color.Teal;
-            this.btnManageUsers.Enabled = false;
             this.btnManageUsers.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnManageUsers.ForeColor = System.Drawing.Color.Cyan;
             this.btnManageUsers.Location = new System.Drawing.Point(831, 739);
             this.btnManageUsers.Name = "btnManageUsers";
             this.btnManageUsers.Size = new System.Drawing.Size(354, 129);
             this.btnManageUsers.TabIndex = 10;
-            this.btnManageUsers.Tag = "enShowUsers";
+            this.btnManageUsers.Tag = "";
             this.btnManageUsers.Text = "Manage users";
             this.btnManageUsers.UseVisualStyleBackColor = false;
             this.btnManageUsers.Click += new System.EventHandler(this.btnManageUsers_Click);
@@ -458,7 +458,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblUsername;
         private System.Windows.Forms.ToolStripMenuItem FindCToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem addUserToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem showUserToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addUserToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem findUserToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem updateUserToolStripMenuItem;

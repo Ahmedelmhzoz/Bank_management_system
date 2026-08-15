@@ -121,7 +121,7 @@
   <data name="profileCard1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAABSgAAAK1CAYAAADLzgCbAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vAAADrwBlbxySQAA/7JJREFUeF7M/WnsfsuW34X97znntvMmUiLlVVCiECJQEskSQklegBIpRBkBG5zQ
+        wgAADsIBFShKgAAA/7JJREFUeF7M/WnsfsuW34X97znntvMmUiLlVVCiECJQEskSQklegBIpRBkBG5zQ
         o9sN3bf79u02bccDJhgUiEJMwEaZlIlgXjg4tnCARAF5wH37zvPQt9sGYuO47z3nP4/n3KmnJ1qr6lv1
         rc9etZ/n9z+3SV4s7apVa6pVtfez6/vU3vveV1+8uvziy3cvX3v1zctXX7TjL75877Uo9INUjuNXXn4r
         STJfedXolnrE8uUX30z9L7989/KlF6+yLcpx/Oq730xynvyF3peeT77bWehF8+Htaed5xPCtY3yd1+pN
@@ -16171,7 +16171,4 @@
         nfEeafFfpuXr/f8L3KQcUrKextMAAAAASUVORK5CYII=
 </value>
   </data>
-  <metadata name="openFileDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
 </root>

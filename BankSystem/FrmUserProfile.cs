@@ -5,7 +5,6 @@ using BankBusiness;
 
 namespace BankSystem {
     public partial class FrmUserProfile : Form {
-
         Users user = null;
         public FrmUserProfile(Users usr) {
             InitializeComponent();
@@ -17,8 +16,11 @@ namespace BankSystem {
         }
         private void FrmUserProfile_Load(object sender, EventArgs e) {
             btnChange.Visible= false;
+            if (user.imagePath != "") 
+                btnUpdateOrSetImage.Text = "Update image";
+            else 
+                btnUpdateOrSetImage.Text = "Set image";
         }
-
         private void btnChange_Click(object sender, EventArgs e) {
             if (txtNew.Text == "" || txtOld.Text == "") {
                 ErrorMessage("Please fill all text boxes");
@@ -31,6 +33,9 @@ namespace BankSystem {
             else if (txtOld.Text == txtNew.Text) {
                 ErrorMessage("The new password is the same as the old");
                 return;
+            }
+            else if (Users.isPasswordTaken(txtNew.Text)) {
+                ErrorMessage("The new password is taken");
             }
             else {
                 user.password = txtNew.Text;
@@ -56,6 +61,15 @@ namespace BankSystem {
             linklblChangePass.Visible = false;
             lblNEw.Visible = true;
             lblOld.Visible = true;
+        }
+        private void btnUpdateOrSetImage_Click(object sender, EventArgs e) {
+            openFileDialog1.InitialDirectory = @"C:\";
+            openFileDialog1.Title = "Choose image";
+            openFileDialog1.DefaultExt = "png";
+            openFileDialog1.Filter = "PNG File (*.png)|*.png";
+            if (openFileDialog1.ShowDialog() == DialogResult.OK) {
+                profileCard1.putImage(openFileDialog1.FileName);
+            }
         }
     }
 }
